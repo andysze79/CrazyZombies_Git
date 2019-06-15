@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6268391632664834738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6268391632664834736}
+  - component: {fileID: 6268391632664834739}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6268391632664834736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6268391632664834738}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6268391632664834739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6268391632664834738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd1f8a600ddb3147a07a3fb0c7cf2d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showGizmoOnSelect: 0
+  gizmoScale: 1
+  gizmoColor1: {r: 0, g: 1, b: 1, a: 1}
+  gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
+  gizmoColor3: {r: 0, g: 0, b: 1, a: 1}
+  spawnTroopContainer: {fileID: 0}
+  troopPrefab: {fileID: 0}
+  formations: []
+  spawnOnStart: 1
+  spawnAtTheSpot: 0
+  spawnInvulnerableUnits: 0
+  spawnType: 0
+  spawnLocationType: 0
+  targetingType: 0
+  endlessTargetAxis: 0
+  endlessWaypointContainer: {fileID: 0}
+  endlessTroopCountPerBurst: 1
+  endlessBurstDelay: 1
+  endlessBurstDelayInitial: 1
+  endlessDestroyTime: 0
+  burstCount: 1
+  burstDelay: 1
+  burstSpawnDelayInitial: 0
+  spawnDelayInitial: 0
+  spawnDelayPerTroop: 0
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaPosition: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
+  targetAreaPosition: {x: 0, y: 0, z: 0}
+  spawnLocations: []
+  Priority1: 3
+  Priority2: 3
+  Priority3: 3
+  automateFormationSwitch: 0
+  loopAutomation: 0
+  automatedTime: 0
+  timelineFormationIndex: -1

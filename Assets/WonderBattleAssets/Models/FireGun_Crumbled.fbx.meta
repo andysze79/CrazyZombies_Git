@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: 62f62c1b388ae624286074ecfd2f20ab
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: FireGun__3_
+    100002: FireGun__3__cell
+    100004: FireGun__3__cell.001
+    100006: FireGun__3__cell.002
+    100008: FireGun__3__cell.003
+    100010: FireGun__3__cell.004
+    100012: FireGun__3__cell.005
+    100014: FireGun__3__cell.006
+    100016: FireGun__3__cell.007
+    100018: //RootNode
+    100020: StartHere
+    100022: StartHere_cell
+    100024: StartHere_cell.001
+    100026: StartHere_cell.002
+    100028: StartHere_cell.003
+    100030: StartHere_cell.004
+    100032: StartHere_cell.005
+    100034: StartHere_cell.006
+    100036: StartHere_cell.007
+    100038: StartHere_cell.008
+    100040: StartHere_cell.009
+    100042: StartHere_cell.010
+    400000: FireGun__3_
+    400002: FireGun__3__cell
+    400004: FireGun__3__cell.001
+    400006: FireGun__3__cell.002
+    400008: FireGun__3__cell.003
+    400010: FireGun__3__cell.004
+    400012: FireGun__3__cell.005
+    400014: FireGun__3__cell.006
+    400016: FireGun__3__cell.007
+    400018: //RootNode
+    400020: StartHere
+    400022: StartHere_cell
+    400024: StartHere_cell.001
+    400026: StartHere_cell.002
+    400028: StartHere_cell.003
+    400030: StartHere_cell.004
+    400032: StartHere_cell.005
+    400034: StartHere_cell.006
+    400036: StartHere_cell.007
+    400038: StartHere_cell.008
+    400040: StartHere_cell.009
+    400042: StartHere_cell.010
+    2100000: Default_Prototype
+    2300000: FireGun__3_
+    2300002: FireGun__3__cell
+    2300004: FireGun__3__cell.001
+    2300006: FireGun__3__cell.002
+    2300008: FireGun__3__cell.003
+    2300010: FireGun__3__cell.004
+    2300012: FireGun__3__cell.005
+    2300014: FireGun__3__cell.006
+    2300016: FireGun__3__cell.007
+    2300018: StartHere
+    2300020: StartHere_cell
+    2300022: StartHere_cell.001
+    2300024: StartHere_cell.002
+    2300026: StartHere_cell.003
+    2300028: StartHere_cell.004
+    2300030: StartHere_cell.005
+    2300032: StartHere_cell.006
+    2300034: StartHere_cell.007
+    2300036: StartHere_cell.008
+    2300038: StartHere_cell.009
+    2300040: StartHere_cell.010
+    3300000: FireGun__3_
+    3300002: FireGun__3__cell
+    3300004: FireGun__3__cell.001
+    3300006: FireGun__3__cell.002
+    3300008: FireGun__3__cell.003
+    3300010: FireGun__3__cell.004
+    3300012: FireGun__3__cell.005
+    3300014: FireGun__3__cell.006
+    3300016: FireGun__3__cell.007
+    3300018: StartHere
+    3300020: StartHere_cell
+    3300022: StartHere_cell.001
+    3300024: StartHere_cell.002
+    3300026: StartHere_cell.003
+    3300028: StartHere_cell.004
+    3300030: StartHere_cell.005
+    3300032: StartHere_cell.006
+    3300034: StartHere_cell.007
+    3300036: StartHere_cell.008
+    3300038: StartHere_cell.009
+    3300040: StartHere_cell.010
+    4300000: StartHere_cell.010
+    4300002: StartHere_cell.009
+    4300004: StartHere_cell.008
+    4300006: StartHere_cell.007
+    4300008: StartHere_cell.006
+    4300010: StartHere_cell.005
+    4300012: StartHere_cell.004
+    4300014: StartHere_cell.003
+    4300016: StartHere_cell.002
+    4300018: StartHere_cell.001
+    4300020: StartHere_cell
+    4300022: FireGun__3__cell.007
+    4300024: FireGun__3__cell.006
+    4300026: FireGun__3__cell.005
+    4300028: FireGun__3__cell.004
+    4300030: FireGun__3__cell.003
+    4300032: FireGun__3__cell.002
+    4300034: FireGun__3__cell.001
+    4300036: FireGun__3__cell
+    4300038: FireGun__3_
+    4300040: StartHere
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
