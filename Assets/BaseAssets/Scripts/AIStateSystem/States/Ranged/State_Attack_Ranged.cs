@@ -50,7 +50,6 @@ public class State_Attack_Ranged : State_Attack
             projectile.SetProjectileTargetOffsetY(Data.projectileTargetOffsetY);
             projectile.SetDamagableLayerMask(Data.searchLayerMask);
             projectile.SetProjectileCasterAndReceiver(Data, Data.enemy);
-            projectile.transform.Find("VFX").GetComponent<ProjectileMover>().speed /= Data.projectileSpeedInSeconds;
         }
     }
 

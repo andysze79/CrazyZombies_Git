@@ -190,6 +190,7 @@ public class SpawnManager : MonoBehaviour
         while(automateFormationSwitch)
         {
             yield return new WaitForSeconds(automatedTime);
+
             formationIndex++;
 
             if (loopAutomation && formationIndex == formations.Count)
@@ -201,7 +202,97 @@ public class SpawnManager : MonoBehaviour
                 break;
             }
 
-            SwitchFormation(formationIndex);
+            int tempFormationIndex = (formationIndex - 1 < 0) ? formations.Count : formationIndex - 1;
+
+            if(formations[tempFormationIndex].timedSwitch)
+            {
+                StartCoroutine(SwitchFormationTimed());
+            }
+            else
+            {
+                SwitchFormation(formationIndex);
+            }
+        }
+    }
+
+    private IEnumerator SwitchFormationTimed()
+    {
+        formationIndex--;
+
+        if (formationIndex < 0)
+        {
+            formationIndex = formations.Count;
+        }
+
+        if (formations.Count <= 1)
+        {
+            DebugManager.NoFormationToSwitchTo(gameObject);
+            yield break;
+        }
+
+        if (troopPrefab == null)
+        {
+            DebugManager.NoTroopPrefabSet(gameObject);
+            yield break; 
+        }
+
+        if (spawnTroopContainer == null)
+        {
+            DebugManager.NoTroopParentSet(gameObject);
+            yield break; 
+        }
+
+        List<Vector3> currentPositions = formations[formationIndex].GetActiveList();
+        FormationPlanner currentFormationPlanner = formations[formationIndex];
+        int troopIndex = 0;
+        int mirrorMultiplier = (currentFormationPlanner.isMirrored) ? 2 : 1;
+
+        formationIndex++;
+
+        if (formationIndex >= formations.Count)
+        {
+            formationIndex = 0;
+        }
+
+        List<Vector3> spawnPositions = formations[formationIndex].GetActiveList();
+        FormationPlanner nextFormationPlanner = formations[formationIndex];
+
+        for (int i = 0; i < currentFormationPlanner.troopFormation.Count; i++)
+        {
+            List<AIDataHolder> rowTroops = new List<AIDataHolder>();
+            List<Transform> rowTransforms = new List<Transform>();
+
+            for (int k = 0; k < currentFormationPlanner.troopFormation[i].rowCount * mirrorMultiplier; k++)
+            {
+                rowTroops.Add(spawnTroopContainer.GetChild(troopIndex + k).GetComponent<AIDataHolder>());
+
+                Transform waypoint = new GameObject((troopIndex + k).ToString()).transform;
+                waypoint.position = spawnPositions[troopIndex + k];
+                waypoint.rotation = nextFormationPlanner.transform.rotation;
+
+                rowTransforms.Add(waypoint);
+
+                if (nextFormationPlanner.pathCreator)
+                {
+                    waypoint.SetParent(nextFormationPlanner.pathCreator.transform);
+                }
+                else if (!nextFormationPlanner.pathCreator)
+                {
+                    waypoint.SetParent(nextFormationPlanner.transform);
+                }
+            }
+
+            troopIndex += currentFormationPlanner.troopFormation[i].rowCount * mirrorMultiplier;
+
+            for (int k = 0; k < rowTroops.Count; k++)
+            {
+                Transform tempOrigin = rowTroops[k].origin;
+                rowTroops[k].SetupAI(this, rowTransforms[k]);
+                rowTroops[k].fightingMode = nextFormationPlanner.fightingMode;
+                Destroy(tempOrigin.gameObject);
+            }
+
+            yield return new WaitForSeconds(0.5f);
         }
     }
 

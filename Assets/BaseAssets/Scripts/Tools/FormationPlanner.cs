@@ -14,6 +14,7 @@ public class FormationPlanner : MonoBehaviour
     public Mesh gizmoPreviewMesh = null;
 
     [Header("Formation Settings")]
+    public bool timedSwitch = false;
     public FormationType formationType;
     public enum FormationType { Regular, Line, Manual }
     public AIDataHolder.FightingMode fightingMode = AIDataHolder.FightingMode.Aggressive;

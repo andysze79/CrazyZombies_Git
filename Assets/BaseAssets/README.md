@@ -1,6 +1,7 @@
 # BaseAssets
 
 Available Tools:
+- Project Manager
 - Spawn Manager
 - Formation Planner
 - Formation Mover

@@ -97,6 +97,16 @@ PrefabInstance:
       propertyPath: searchLayerMask.m_Bits
       value: 1024
       objectReference: {fileID: 0}
+    - target: {fileID: 4437039588861887102, guid: 6b32675b5fa571542928e6790ffa3958,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437039588861887102, guid: 6b32675b5fa571542928e6790ffa3958,
+        type: 3}
+      propertyPath: m_Speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 21253769, guid: 6b32675b5fa571542928e6790ffa3958, type: 3}
       propertyPath: onDamageEvent.Array.size
       value: 1

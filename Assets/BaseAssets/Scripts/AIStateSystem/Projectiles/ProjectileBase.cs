@@ -90,7 +90,7 @@ public class ProjectileBase : MonoBehaviour
         RaycastHit hit = new RaycastHit();
         if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, damagable))
         {
-            projectileMover.PlayOnHit(hit);
+            if(projectileMover) projectileMover.PlayOnHit(hit);
             projectileCaster.Attack.DealDamage(null);
             canDamage = false;
         }

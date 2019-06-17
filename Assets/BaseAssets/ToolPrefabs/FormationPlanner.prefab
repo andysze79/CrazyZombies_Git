@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
+  gizmoInPlayMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -65,8 +66,8 @@ MonoBehaviour:
   fightingMode: 1
   isMirrored: 0
   isRightAligned: 0
-  rowDistance: 1
-  columnDistance: 1
+  rowDistance: 2.5
+  columnDistance: 2.5
   tilt: 0
   troopFormation: []
   isLoop: 0
