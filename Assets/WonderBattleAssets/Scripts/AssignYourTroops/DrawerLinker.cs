@@ -60,7 +60,7 @@ public class DrawerLinker : MonoBehaviour
             m_LinkedEvents[index].m_VFX.SetActive(m_LinkedEvents[index].m_VFXValue);
         }
         if (m_LinkedEvents[index].m_paintVFX != null) {
-            m_LinkedEvents[index].m_paintVFX.GetComponent<RaycastCursor>().m_Index = m_LinkedEvents[index].m_paintVFXIndex;
+            //m_LinkedEvents[index].m_paintVFX.GetComponent<RaycastCursor>().m_Index = m_LinkedEvents[index].m_paintVFXIndex;
             m_LinkedEvents[index].m_paintVFX.SetActive(m_LinkedEvents[index].m_paintVFXValue);
         }
         if (m_LinkedEvents[index].m_UI != null) {

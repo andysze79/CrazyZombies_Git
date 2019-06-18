@@ -16,7 +16,7 @@ public class SlotsVisualizer : MonoBehaviour
 
     public void OnEnable()
     {
-        
+        transform.position = m_objs[0].m_Formation.transform.position;
 
         for (int i = 0; i < m_objs.Length; i++)
         {
