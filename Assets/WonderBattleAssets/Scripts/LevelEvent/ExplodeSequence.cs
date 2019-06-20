@@ -12,14 +12,21 @@ public class ExplodeSequence : MonoBehaviour
     }
 
     public List<ExplodeEvent> m_event = new List<ExplodeEvent>();
+    public bool m_TriggeredOnEnable = false;
     public bool m_triggered = false;
     public string m_SFXName;
 
+    [Header("Explode Behavior Settings")]
     public float m_ExplodeForce;
     [Range(0,1)]public float m_ExplodeRandomness;
     public Transform m_ExplodeDirection;
 
     public Coroutine Process { get; set; }
+
+    public void OnEnable() {
+        if (m_TriggeredOnEnable)
+            m_triggered = true;
+    }
 
     public void Update()
     {

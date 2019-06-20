@@ -13,7 +13,9 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     }
 
     public GameObject m_PreviewObj;
+    public float m_PreviewDelay;
     public GameObject m_ControlObj;
+    public float m_ControlDelay;
 
     public Mode m_CurrentMode = Mode.Card;
     
@@ -24,8 +26,12 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     public bool ResetProcess { get; set; }
     public Vector3 StartPos { get; set; }
     public float StartTime { get; set; }
-    public bool DragInProgress;// { get; set; }
+    public bool DragInProgress { get; set; }
     
+    // Ienumerater Buffer
+    Coroutine ColProcess { get; set; }
+
+
     #region Drag Func
     void InitializePos()
     {
@@ -148,7 +154,9 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
                 m_PreviewObj.SetActive(false);
                 m_ControlObj.SetActive(false);
                 CardImage.color = OriginalCol;
-                
+
+                //CardActive(true);
+
                 m_PreviewObj.GetComponent<CameraRaycastObject>().DeactivateDragObject();
                 break;
             case Mode.Object:
@@ -160,6 +168,7 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
                 var col = OriginalCol;
                 col.a = 0;
                 CardImage.color = col;
+                //CardActive(false);
 
                 // Move out the card
                 transform.SetParent(transform.root);
@@ -169,8 +178,8 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
                 break;
             case Mode.Placed:
                 // Open the preview object
-                m_PreviewObj.SetActive(false);
-                m_ControlObj.SetActive(true);
+                StartCoroutine(DelayerSwitch(m_PreviewObj, false, m_PreviewDelay));
+                StartCoroutine(DelayerSwitch(m_ControlObj, true, m_ControlDelay));
                 break;
             default:
                 break;
@@ -190,5 +199,53 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
         StartPos = transform.position;
         StartTime = Time.time;
         ResetProcess = true;
+    }
+
+    public void CardActive(bool value) {
+        if (!value)
+        {
+            var col = OriginalCol;
+            col.a = 0;
+            //CardImage.color = col;
+
+            print("CardActive");
+
+            ChangeCol(CardImage, OriginalCol, col);
+        }
+        else {
+
+            ChangeCol(CardImage, CardImage.color, OriginalCol);
+        }
+    }
+
+    public void ChangeCol(Image target, Color from, Color to) {
+
+        print("changeCol");
+        if (ColProcess == null)
+        {
+            ColProcess = StartCoroutine(ColTransition(target, from, to));
+        }
+        else
+        {
+            StopCoroutine(ColProcess);
+            ColProcess = null;
+            ColProcess = StartCoroutine(ColTransition(target, from, to));
+        }
+    }
+
+    public IEnumerator ColTransition(Image target, Color from, Color to) {
+        var startTime = Time.time;
+        var endTime = 1f;
+
+        while (Time.time - StartTime < endTime) {
+            print(to);
+            CardImage.color = Color.Lerp(from, to, (Time.time - startTime) / endTime);
+            yield return null;
+        }        
+    }
+
+    public IEnumerator DelayerSwitch(GameObject Target, bool value, float time) {
+        yield return new WaitForSeconds(time);
+        Target.SetActive(value);
     }
 }
