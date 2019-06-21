@@ -2,27 +2,30 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
 
-public class AIEventCatcher : MonoBehaviour 
+namespace BaseAssets.AI
 {
-    public List<EventCall> onDamageEvent = new List<EventCall>();
-
-    public void AnimationEvent(AnimationEvent _animationEvent)
+    public class AIEventCatcher : MonoBehaviour
     {
-        foreach (EventCall action in onDamageEvent)
+        public List<EventCall> onDamageEvent = new List<EventCall>();
+
+        public void AnimationEvent(AnimationEvent _animationEvent)
         {
-            if (action.callName == _animationEvent.stringParameter)
+            foreach (EventCall action in onDamageEvent)
             {
-                action.eventCall.Invoke(gameObject);
+                if (action.callName == _animationEvent.stringParameter)
+                {
+                    action.eventCall.Invoke(gameObject);
+                }
             }
         }
-    }    
-}
+    }
 
-[System.Serializable]
-public class EventCall
-{
-    public string callName;
     [System.Serializable]
-    public class OnDamageEvent : UnityEvent<GameObject> { }
-    public OnDamageEvent eventCall = new OnDamageEvent();
+    public class EventCall
+    {
+        public string callName;
+        [System.Serializable]
+        public class OnDamageEvent : UnityEvent<GameObject> { }
+        public OnDamageEvent eventCall = new OnDamageEvent();
+    }
 }

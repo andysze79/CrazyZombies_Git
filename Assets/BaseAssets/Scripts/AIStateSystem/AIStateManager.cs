@@ -1,91 +1,94 @@
 ﻿using UnityEngine;
 
-public class AIStateManager : MonoBehaviour
+namespace BaseAssets.AI
 {
-    public AIStateKeeper.States PreviousState;
-    public AIStateKeeper.States ActiveState;
-
-    private bool RunUpdate = false;
-
-    public OnEnterState onEnterState;
-    public OnUpdateState onUpdateState;
-    public OnExitState onExitState;
-
-    public delegate void OnEnterState();
-    public delegate void OnUpdateState();
-    public delegate void OnExitState();
-
-    private void Start() 
+    public class AIStateManager : MonoBehaviour
     {
-        ChangeState(ActiveState);
-    }
+        public AIStateKeeper.States PreviousState;
+        public AIStateKeeper.States ActiveState;
 
-    public void ChangeStateToPreviousState()
-    {
-        ExitState();
-        SetPreviousState();
-        ActiveState = PreviousState;
-        EnterState();
-    }
+        private bool RunUpdate = false;
 
-    public void ChangeState(AIStateKeeper.States _newState)
-    {
-        ExitState();
-        SetPreviousState();
-        ActiveState = _newState;
-        EnterState();
-    }
+        public OnEnterState onEnterState;
+        public OnUpdateState onUpdateState;
+        public OnExitState onExitState;
 
-    public void ChangeStateIf(AIStateKeeper.States _requiredState, AIStateKeeper.States _newState)
-    {
-        if(ActiveState != _requiredState) return;
+        public delegate void OnEnterState();
+        public delegate void OnUpdateState();
+        public delegate void OnExitState();
 
-        ExitState();
-        SetPreviousState();
-        ActiveState = _newState;
-        EnterState();
-    }
-
-    private void SetPreviousState()
-    {
-        PreviousState = ActiveState;
-    }
-
-    private void EnterState()
-    {
-        if (onEnterState != null)
+        private void Start()
         {
-            onEnterState.Invoke();
+            ChangeState(ActiveState);
         }
 
-        RunUpdate = true;
-    }
-
-    private void UpdateState()
-    {
-        if (RunUpdate == false)
+        public void ChangeStateToPreviousState()
         {
-            return;
+            ExitState();
+            SetPreviousState();
+            ActiveState = PreviousState;
+            EnterState();
         }
 
-        if (onUpdateState != null)
+        public void ChangeState(AIStateKeeper.States _newState)
         {
-            onUpdateState.Invoke();
+            ExitState();
+            SetPreviousState();
+            ActiveState = _newState;
+            EnterState();
         }
-    }
 
-    private void ExitState()
-    {
-        RunUpdate = false;
-
-        if (onExitState != null)
+        public void ChangeStateIf(AIStateKeeper.States _requiredState, AIStateKeeper.States _newState)
         {
-            onExitState.Invoke();
-        }
-    }
+            if (ActiveState != _requiredState) return;
 
-    private void Update()
-    {
-        UpdateState();
+            ExitState();
+            SetPreviousState();
+            ActiveState = _newState;
+            EnterState();
+        }
+
+        private void SetPreviousState()
+        {
+            PreviousState = ActiveState;
+        }
+
+        private void EnterState()
+        {
+            if (onEnterState != null)
+            {
+                onEnterState.Invoke();
+            }
+
+            RunUpdate = true;
+        }
+
+        private void UpdateState()
+        {
+            if (RunUpdate == false)
+            {
+                return;
+            }
+
+            if (onUpdateState != null)
+            {
+                onUpdateState.Invoke();
+            }
+        }
+
+        private void ExitState()
+        {
+            RunUpdate = false;
+
+            if (onExitState != null)
+            {
+                onExitState.Invoke();
+            }
+        }
+
+        private void Update()
+        {
+            UpdateState();
+        }
     }
 }

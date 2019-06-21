@@ -1,10 +1,11 @@
 # BaseAssets
 
 Available Tools:
-- Project Manager
+- Tool Manager
 - Spawn Manager
 - Formation Planner
 - Formation Mover
+- Counter Manager
 - Path Creator (Third Party)
 - ...
 

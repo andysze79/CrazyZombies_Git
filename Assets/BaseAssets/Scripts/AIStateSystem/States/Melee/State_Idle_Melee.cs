@@ -1,26 +1,29 @@
 using UnityEngine;
 
-public class State_Idle_Melee : State_Idle 
+namespace BaseAssets.AI
 {
-    // State Functions =========================================================================================================
-    protected override void RunOnce()
+    public class State_Idle_Melee : State_Idle
     {
-        base.RunOnce();
-    }
+        // State Functions =========================================================================================================
+        protected override void RunOnce()
+        {
+            base.RunOnce();
+        }
 
-    public override void EnterState()
-    {
-        base.EnterState();
-    }
+        public override void EnterState()
+        {
+            base.EnterState();
+        }
 
-    public override void UpdateState()
-    {
-        base.UpdateState();
-    }
+        public override void UpdateState()
+        {
+            base.UpdateState();
+        }
 
-    public override void ExitState()
-    {
+        public override void ExitState()
+        {
 
+        }
+        // =========================================================================================================================
     }
-    // =========================================================================================================================
 }

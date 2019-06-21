@@ -1,38 +1,40 @@
 using UnityEngine;
 
-public class DebugSceneManager : MonoBehaviour 
+namespace BaseAssets.Debugger
 {
-    public static DebugSceneManager Instance = null;
-
-
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    private void Awake()
+    public class DebugSceneManager : MonoBehaviour
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-    }
+        public static DebugSceneManager Instance = null;
 
-    private void Update() 
-    {
-        if(Input.GetKeyDown(KeyCode.KeypadPlus))
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private void Awake()
         {
-            if(Time.timeScale < 10)
+            if (Instance == null)
             {
-                Time.timeScale += 1;
+                Instance = this;
+            }
+            else if (Instance != null && Instance != this)
+            {
+                Destroy(this);
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        private void Update()
         {
-            if(Time.timeScale > 0)
+            if (Input.GetKeyDown(KeyCode.KeypadPlus))
             {
-                Time.timeScale -= 1;
+                if (Time.timeScale < 10)
+                {
+                    Time.timeScale += 1;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.KeypadMinus))
+            {
+                if (Time.timeScale > 0)
+                {
+                    Time.timeScale -= 1;
+                }
             }
         }
     }

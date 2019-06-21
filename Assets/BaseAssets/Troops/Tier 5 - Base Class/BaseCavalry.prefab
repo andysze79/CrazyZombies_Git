@@ -91,17 +91,17 @@ PrefabInstance:
     - target: {fileID: 2008058886225982168, guid: 13409af8d83b0334bad645019e1fcb5a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.3
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 2008058886225982168, guid: 13409af8d83b0334bad645019e1fcb5a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.3
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 2008058886225982168, guid: 13409af8d83b0334bad645019e1fcb5a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.3
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 2008058886225982169, guid: 13409af8d83b0334bad645019e1fcb5a,
         type: 3}
@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4437039588861887074}
     m_Modifications:
+    - target: {fileID: 1935003873126383349, guid: 6bb8214ee6a96274095c82f3cb1f3327,
+        type: 3}
+      propertyPath: m_Name
+      value: CavalryMesh
+      objectReference: {fileID: 0}
     - target: {fileID: 1935003873126408917, guid: 6bb8214ee6a96274095c82f3cb1f3327,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -182,11 +187,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935003873126383349, guid: 6bb8214ee6a96274095c82f3cb1f3327,
-        type: 3}
-      propertyPath: m_Name
-      value: CavalryMesh
       objectReference: {fileID: 0}
     - target: {fileID: 1935003873116851505, guid: 6bb8214ee6a96274095c82f3cb1f3327,
         type: 3}

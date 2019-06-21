@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5167674140089760669
 Transform:
   m_ObjectHideFlags: 0
@@ -4697,7 +4697,7 @@ ParticleSystem:
 --- !u!199 &5007199236610131625
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4782,14 +4782,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5169809696286648519}
-  m_LocalRotation: {x: -0.012054741, y: -0.013097674, z: 0.15276402, w: 0.98810244}
+  m_LocalRotation: {x: -0.012057503, y: -0.013100556, z: 0.15276499, w: 0.9881022}
   m_LocalPosition: {x: 0.29, y: 1.06, z: 4.85}
   m_LocalScale: {x: 9.044527, y: 9.044527, z: 16.095587}
   m_Children:
   - {fileID: 5167674140089760669}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.136, y: -1.695, z: 17.594002}
 --- !u!198 &5006708125574508569
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4804,7 +4804,7 @@ ParticleSystem:
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -4873,7 +4873,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 5
       minScalar: 0.12
       maxCurve:
         serializedVersion: 2
@@ -4980,7 +4980,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.9600265, b: 1, a: 0.59607846}
+      maxColor: {r: 0, g: 0.9646015, b: 1, a: 0.1254902}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9455,7 +9455,7 @@ ParticleSystem:
 --- !u!199 &5006935604629954485
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -9526,5 +9526,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad2eeb3299b81242b159ef375517a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LifeTime: 0.2
+  m_LifeTime: 3
   m_Destroy: 0

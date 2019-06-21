@@ -41,8 +41,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: EventCall+OnDamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: BaseAssets.AI.EventCall+OnDamageEvent, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1001 &4735590777735413335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123,12 +123,12 @@ PrefabInstance:
     - target: {fileID: 3012942433750595166, guid: 3d9e5ccc42fa15e4192cd409008a79f0,
         type: 3}
       propertyPath: AttackDistance
-      value: 3.3
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3012942433750595166, guid: 3d9e5ccc42fa15e4192cd409008a79f0,
         type: 3}
       propertyPath: SearchRadius
-      value: 7.3
+      value: 3.73
       objectReference: {fileID: 0}
     - target: {fileID: 3606839888934200881, guid: 3d9e5ccc42fa15e4192cd409008a79f0,
         type: 3}
@@ -15521,6 +15521,21 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 8337890776565320614}
+    - target: {fileID: 3012942433750595167, guid: 3d9e5ccc42fa15e4192cd409008a79f0,
+        type: 3}
+      propertyPath: m_Speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012942433750595167, guid: 3d9e5ccc42fa15e4192cd409008a79f0,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012942433750595167, guid: 3d9e5ccc42fa15e4192cd409008a79f0,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d9e5ccc42fa15e4192cd409008a79f0, type: 3}
 --- !u!114 &737616258750814059 stripped

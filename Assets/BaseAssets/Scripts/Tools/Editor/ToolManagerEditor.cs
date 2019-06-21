@@ -4,6 +4,8 @@ using UnityEditor.Events;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using BaseAssets.Tools;
+using BaseAssets.AI;
 
 public class ToolManagerEditor : EditorWindow 
 {
@@ -28,7 +30,7 @@ public class ToolManagerEditor : EditorWindow
     private GameObject BaseMesh = null;
     private LayerMask RedSearchLayermask = 0;
     private LayerMask BlueSearchLayermask = 0;
-    private enum BaseTypeEnum { BaseMelee, BaseRanged }
+    private enum BaseTypeEnum { BaseMelee, BaseRanged, BaseRunner }
     private BaseTypeEnum BaseType = BaseTypeEnum.BaseMelee;
     private AnimatorOverrideController AnimatorController = null;
     private AIDataHolder.TroopType TroopType = AIDataHolder.TroopType.Infantry;
@@ -36,6 +38,7 @@ public class ToolManagerEditor : EditorWindow
     // Paths
     private string BaseMeleePath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseMelee.prefab";
     private string BaseRangedPath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseRanged.prefab";
+    private string BaseRunnerPath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseRunner.prefab";
     private string BaseClassPath = "Assets/BaseAssets/Troops/Tier 5 - Base Class/CreatedByTPC";
     private string BlueTemporaryMaterialPath = "Assets/BaseAssets/ToolMaterials/TPCMaterials/TemporaryBlueTroopMaterial.mat";
     private string RedTemporaryMaterialPath = "Assets/BaseAssets/ToolMaterials/TPCMaterials/TemporaryRedTroopMaterial.mat";
@@ -66,9 +69,11 @@ public class ToolManagerEditor : EditorWindow
                     GUILayout.Label("GLOBAL TOOL SETTINGS", EditorStyles.boldLabel);
                     GUILayout.BeginVertical();
                         EditorGUIUtility.labelWidth = 200f;
-                        ProjectManagerDataHolder.GizmoInPlayMode = EditorGUILayout.Toggle("Gizmos In Play Mode:", ProjectManagerDataHolder.GizmoInPlayMode);
-                        ProjectManagerDataHolder.ShowInfoLog = EditorGUILayout.Toggle("Show Info Log In Play Mode:", ProjectManagerDataHolder.ShowInfoLog);
-                        ProjectManagerDataHolder.ShowErrorLog = EditorGUILayout.Toggle("Show Error Log In Play Mode:", ProjectManagerDataHolder.ShowErrorLog);
+                        ToolManagerDataHolder.GizmoInPlayMode = EditorGUILayout.Toggle("Gizmos In Play Mode:", ToolManagerDataHolder.GizmoInPlayMode);
+                        ToolManagerDataHolder.GizmoInEditMode = EditorGUILayout.Toggle("Gizmos In Edit Mode:", ToolManagerDataHolder.GizmoInEditMode);
+                        ToolManagerDataHolder.ShowInfoLog = EditorGUILayout.Toggle("Show Info Log In Play Mode:", ToolManagerDataHolder.ShowInfoLog);
+                        ToolManagerDataHolder.ShowErrorLog = EditorGUILayout.Toggle("Show Error Log In Play Mode:", ToolManagerDataHolder.ShowErrorLog);
+                        ToolManagerDataHolder.ProjectileDebugRay = EditorGUILayout.Toggle("Show Projectile Damage Ray:", ToolManagerDataHolder.ProjectileDebugRay);
                     GUILayout.EndVertical();
                 // ============================================================================================================================================================
 
@@ -291,12 +296,13 @@ public class ToolManagerEditor : EditorWindow
                 scrollPositionTroopPrefabCreatorTab = GUILayout.BeginScrollView(scrollPositionTroopPrefabCreatorTab);
 
                 // ============================================================================================================================================================
-                    GUILayout.Label("BASE TYPE SETTINGS", EditorStyles.boldLabel);
-                    Name = EditorGUILayout.TextField("Name:", Name) as string;
-                    BaseMesh = EditorGUILayout.ObjectField("BaseMesh:", BaseMesh, typeof(GameObject), false) as GameObject;
-                    AnimatorController = EditorGUILayout.ObjectField("AnimatorController:", AnimatorController, typeof(AnimatorOverrideController), false) as AnimatorOverrideController;
-                    BaseType = (BaseTypeEnum)EditorGUILayout.EnumPopup("BaseType:", BaseType);
-                    TroopType = (AIDataHolder.TroopType)EditorGUILayout.EnumPopup("TroopType:", TroopType);
+                    GUILayout.Label("BASE PREFAB SETTINGS", EditorStyles.boldLabel);
+                    EditorGUIUtility.labelWidth = 200f;
+                    Name = EditorGUILayout.TextField("Base Name:", Name) as string;
+                    BaseMesh = EditorGUILayout.ObjectField("Base Mesh:", BaseMesh, typeof(GameObject), false) as GameObject;
+                    AnimatorController = EditorGUILayout.ObjectField("Animator Controller:", AnimatorController, typeof(AnimatorOverrideController), false) as AnimatorOverrideController;
+                    BaseType = (BaseTypeEnum)EditorGUILayout.EnumPopup("Base Type:", BaseType);
+                    TroopType = (AIDataHolder.TroopType)EditorGUILayout.EnumPopup("Troop Type:", TroopType);
                 // ============================================================================================================================================================
 
                 // ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -305,13 +311,14 @@ public class ToolManagerEditor : EditorWindow
                 // ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 // ============================================================================================================================================================
-                    GUILayout.Label("FINAL PREFAB SETTINGS", EditorStyles.boldLabel);
-                    CreateFinalPrefabs = EditorGUILayout.Toggle("CreateFinalPrefabs:", CreateFinalPrefabs);
-                    BlueLayer = EditorGUILayout.LayerField("BlueLayer:", BlueLayer);
-                    RedLayer = EditorGUILayout.LayerField("RedLayer:", RedLayer);
-                    LayerMask tempMaskBlue = EditorGUILayout.MaskField("BlueSearchLayermask:", UnityEditorInternal.InternalEditorUtility.LayerMaskToConcatenatedLayersMask(BlueSearchLayermask), UnityEditorInternal.InternalEditorUtility.layers);
+                    GUILayout.Label("TEAM PREFAB SETTINGS", EditorStyles.boldLabel);
+                    EditorGUIUtility.labelWidth = 200f;
+                    CreateFinalPrefabs = EditorGUILayout.Toggle("Create Team Prefabs:", CreateFinalPrefabs);
+                    BlueLayer = EditorGUILayout.LayerField("Blue Team Layer:", BlueLayer);
+                    RedLayer = EditorGUILayout.LayerField("Red Team Layer:", RedLayer);
+                    LayerMask tempMaskBlue = EditorGUILayout.MaskField("Blue Team Search Layermask:", UnityEditorInternal.InternalEditorUtility.LayerMaskToConcatenatedLayersMask(BlueSearchLayermask), UnityEditorInternal.InternalEditorUtility.layers);
                     BlueSearchLayermask = UnityEditorInternal.InternalEditorUtility.ConcatenatedLayersMaskToLayerMask(tempMaskBlue);
-                    LayerMask tempMaskRed = EditorGUILayout.MaskField("RedSearchLayermask:", UnityEditorInternal.InternalEditorUtility.LayerMaskToConcatenatedLayersMask(RedSearchLayermask), UnityEditorInternal.InternalEditorUtility.layers);
+                    LayerMask tempMaskRed = EditorGUILayout.MaskField("Red Team Search Layermask:", UnityEditorInternal.InternalEditorUtility.LayerMaskToConcatenatedLayersMask(RedSearchLayermask), UnityEditorInternal.InternalEditorUtility.layers);
                     RedSearchLayermask = UnityEditorInternal.InternalEditorUtility.ConcatenatedLayersMaskToLayerMask(tempMaskRed);
                 // ============================================================================================================================================================
 
@@ -321,67 +328,67 @@ public class ToolManagerEditor : EditorWindow
                 // ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                 // ============================================================================================================================================================
-                    foldoutPosition = EditorGUILayout.Foldout(foldoutPosition, "SHOW PATH SETTINGS");
-                        if(foldoutPosition)
-                        {
-                            GUILayout.BeginVertical();
-                                GUILayout.BeginHorizontal();
-                                    DrawBrowseFileButton("Browse Base Melee Path", ref BaseMeleePath);
-                                GUILayout.EndHorizontal();
-                                GUILayout.BeginHorizontal();
-                                    DrawBrowseFileButton("Browse Base Ranged Path", ref BaseRangedPath);
-                                GUILayout.EndHorizontal();
-                                GUILayout.BeginHorizontal();
-                                    DrawBrowseFileButton("Browse Blue Temporary Material Path", ref BlueTemporaryMaterialPath);
-                                GUILayout.EndHorizontal();
-                                GUILayout.BeginHorizontal();
-                                    DrawBrowseFileButton("Browse Red Temporary Material Path", ref RedTemporaryMaterialPath);
-                                GUILayout.EndHorizontal();
-                                GUILayout.BeginHorizontal();
-                                    DrawBrowseFolderButton("Browse Base Class Output", ref BaseClassPath);
-                                GUILayout.EndHorizontal();
-                                GUILayout.BeginHorizontal();
-                                    DrawBrowseFolderButton("Browse Blue Troop Output", ref BlueTroopPath);
-                                GUILayout.EndHorizontal();
-                                GUILayout.BeginHorizontal();
-                                    DrawBrowseFolderButton("Browse Red Troop Output", ref RedTroopPath);
-                                GUILayout.EndHorizontal();
-                                GUILayout.BeginHorizontal();
-                                    if (GUILayout.Button("Save Paths", GUILayout.Width(122)))
-                                    {
-                                        PlayerPrefs.SetString("Base Melee Path", BaseMeleePath);
-                                        PlayerPrefs.SetString("Base Ranged Path", BaseRangedPath);
-                                        PlayerPrefs.SetString("Blue Temporary Material Path", BlueTemporaryMaterialPath);
-                                        PlayerPrefs.SetString("Red Temporary Material Path", RedTemporaryMaterialPath);
-                                        PlayerPrefs.SetString("Base Class Path", BaseClassPath);
-                                        PlayerPrefs.SetString("Blue Troop Path", BlueTroopPath);
-                                        PlayerPrefs.SetString("Red Troop Path", RedTroopPath);
-                                    }
+                //     foldoutPosition = EditorGUILayout.Foldout(foldoutPosition, "SHOW PATH SETTINGS");
+                //         if(foldoutPosition)
+                //         {
+                //             GUILayout.BeginVertical();
+                //                 GUILayout.BeginHorizontal();
+                //                     DrawBrowseFileButton("Browse Base Melee Path", ref BaseMeleePath);
+                //                 GUILayout.EndHorizontal();
+                //                 GUILayout.BeginHorizontal();
+                //                     DrawBrowseFileButton("Browse Base Ranged Path", ref BaseRangedPath);
+                //                 GUILayout.EndHorizontal();
+                //                 GUILayout.BeginHorizontal();
+                //                     DrawBrowseFileButton("Browse Blue Temporary Material Path", ref BlueTemporaryMaterialPath);
+                //                 GUILayout.EndHorizontal();
+                //                 GUILayout.BeginHorizontal();
+                //                     DrawBrowseFileButton("Browse Red Temporary Material Path", ref RedTemporaryMaterialPath);
+                //                 GUILayout.EndHorizontal();
+                //                 GUILayout.BeginHorizontal();
+                //                     DrawBrowseFolderButton("Browse Base Class Output", ref BaseClassPath);
+                //                 GUILayout.EndHorizontal();
+                //                 GUILayout.BeginHorizontal();
+                //                     DrawBrowseFolderButton("Browse Blue Troop Output", ref BlueTroopPath);
+                //                 GUILayout.EndHorizontal();
+                //                 GUILayout.BeginHorizontal();
+                //                     DrawBrowseFolderButton("Browse Red Troop Output", ref RedTroopPath);
+                //                 GUILayout.EndHorizontal();
+                //                 GUILayout.BeginHorizontal();
+                //                     if (GUILayout.Button("Save Paths", GUILayout.Width(122)))
+                //                     {
+                //                         PlayerPrefs.SetString("Base Melee Path", BaseMeleePath);
+                //                         PlayerPrefs.SetString("Base Ranged Path", BaseRangedPath);
+                //                         PlayerPrefs.SetString("Blue Temporary Material Path", BlueTemporaryMaterialPath);
+                //                         PlayerPrefs.SetString("Red Temporary Material Path", RedTemporaryMaterialPath);
+                //                         PlayerPrefs.SetString("Base Class Path", BaseClassPath);
+                //                         PlayerPrefs.SetString("Blue Troop Path", BlueTroopPath);
+                //                         PlayerPrefs.SetString("Red Troop Path", RedTroopPath);
+                //                     }
 
-                // ------------------------------------------------------------------------------------------------------------------------------------------------------------
-                                    GUILayout.Space(2);
-                // ------------------------------------------------------------------------------------------------------------------------------------------------------------
+                // // ------------------------------------------------------------------------------------------------------------------------------------------------------------
+                //                     GUILayout.Space(2);
+                // // ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-                                    if (GUILayout.Button("Load Paths", GUILayout.Width(122)))
-                                    {
-                                        if (PlayerPrefs.HasKey("Base Melee Path"))
-                                            BaseMeleePath = PlayerPrefs.GetString("Base Melee Path");
-                                        if (PlayerPrefs.HasKey("Base Ranged Path"))
-                                            BaseRangedPath = PlayerPrefs.GetString("Base Ranged Path");
-                                        if (PlayerPrefs.HasKey("Blue Temporary Material Path"))
-                                            BlueTemporaryMaterialPath = PlayerPrefs.GetString("Blue Temporary Material Path");
-                                        if (PlayerPrefs.HasKey("Red Temporary Material Path"))
-                                            RedTemporaryMaterialPath = PlayerPrefs.GetString("Red Temporary Material Path");
-                                        if (PlayerPrefs.HasKey("Base Class Path"))
-                                            BaseClassPath = PlayerPrefs.GetString("Base Class Path");
-                                        if (PlayerPrefs.HasKey("Blue Troop Path"))
-                                            BlueTroopPath = PlayerPrefs.GetString("Blue Troop Path");
-                                        if (PlayerPrefs.HasKey("Red Troop Path"))
-                                            RedTroopPath = PlayerPrefs.GetString("Red Troop Path");
-                                    }
-                                GUILayout.EndHorizontal();
-                            GUILayout.EndVertical();
-                        }
+                //                     if (GUILayout.Button("Load Paths", GUILayout.Width(122)))
+                //                     {
+                //                         if (PlayerPrefs.HasKey("Base Melee Path"))
+                //                             BaseMeleePath = PlayerPrefs.GetString("Base Melee Path");
+                //                         if (PlayerPrefs.HasKey("Base Ranged Path"))
+                //                             BaseRangedPath = PlayerPrefs.GetString("Base Ranged Path");
+                //                         if (PlayerPrefs.HasKey("Blue Temporary Material Path"))
+                //                             BlueTemporaryMaterialPath = PlayerPrefs.GetString("Blue Temporary Material Path");
+                //                         if (PlayerPrefs.HasKey("Red Temporary Material Path"))
+                //                             RedTemporaryMaterialPath = PlayerPrefs.GetString("Red Temporary Material Path");
+                //                         if (PlayerPrefs.HasKey("Base Class Path"))
+                //                             BaseClassPath = PlayerPrefs.GetString("Base Class Path");
+                //                         if (PlayerPrefs.HasKey("Blue Troop Path"))
+                //                             BlueTroopPath = PlayerPrefs.GetString("Blue Troop Path");
+                //                         if (PlayerPrefs.HasKey("Red Troop Path"))
+                //                             RedTroopPath = PlayerPrefs.GetString("Red Troop Path");
+                //                     }
+                //                 GUILayout.EndHorizontal();
+                //             GUILayout.EndVertical();
+                //         }
                 // ============================================================================================================================================================
                 GUILayout.EndScrollView();
                 break;
@@ -431,7 +438,7 @@ public class ToolManagerEditor : EditorWindow
                     GUI.backgroundColor = Color.red;
                     if (GUILayout.Button("Reset", GUILayout.Width(100), GUILayout.Height(30)))
                     {
-                        ProjectManagerDataHolder.GizmoInPlayMode = true;
+                        ToolManagerDataHolder.GizmoInPlayMode = true;
 
                         spawnManagerName = "";
                         formationPlannerName = "";
@@ -451,6 +458,7 @@ public class ToolManagerEditor : EditorWindow
 
                         BaseMeleePath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseMelee.prefab";
                         BaseRangedPath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseRanged.prefab";
+                        BaseRunnerPath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseRunner.prefab";
                         BaseClassPath = $"Assets/BaseAssets/Troops/Tier 5 - Base Class/CreatedByTPC";
                         BlueTemporaryMaterialPath = "Assets/BaseAssets/ToolMaterials/TPCMaterials/TemporaryBlueTroopMaterial.mat";
                         RedTemporaryMaterialPath = "Assets/BaseAssets/ToolMaterials/TPCMaterials/TemporaryRedTroopMaterial.mat";
@@ -507,8 +515,8 @@ public class ToolManagerEditor : EditorWindow
 
         if (CreateFinalPrefabs)
         {
-            SaveTeamVariants("Blue", baseClassVariant, BlueSearchLayermask, BlueLayer, BlueTemporaryMaterialPath, BlueTroopPath);
-            SaveTeamVariants("Red", baseClassVariant, RedSearchLayermask, RedLayer, RedTemporaryMaterialPath, RedTroopPath);
+            SaveTeamVariants("blue", baseClassVariant, BlueSearchLayermask, BlueLayer, BlueTemporaryMaterialPath, BlueTroopPath);
+            SaveTeamVariants("red", baseClassVariant, RedSearchLayermask, RedLayer, RedTemporaryMaterialPath, RedTroopPath);
         }
     }
 
@@ -518,8 +526,10 @@ public class ToolManagerEditor : EditorWindow
 
         if (BaseType == BaseTypeEnum.BaseMelee)
             baseTypePrefab = (GameObject)AssetDatabase.LoadMainAssetAtPath(BaseMeleePath);
-        else
+        else if(BaseType == BaseTypeEnum.BaseRanged)
             baseTypePrefab = (GameObject)AssetDatabase.LoadMainAssetAtPath(BaseRangedPath);
+        else if(BaseType == BaseTypeEnum.BaseRunner)
+            baseTypePrefab = (GameObject)AssetDatabase.LoadMainAssetAtPath(BaseRunnerPath);
 
         return baseTypePrefab;
     }
@@ -561,10 +571,14 @@ public class ToolManagerEditor : EditorWindow
                 UnityAction<GameObject> callback = new UnityAction<GameObject>(_baseTroopRoot.GetComponent<State_Attack_Melee>().DealDamage);
                 UnityEventTools.AddObjectPersistentListener<GameObject>(eventCatcher.onDamageEvent[0].eventCall, callback, _baseTroopRoot);
             }
-            else
+            else if(BaseType == BaseTypeEnum.BaseRanged)
             {
                 UnityAction<GameObject> callback = new UnityAction<GameObject>(_baseTroopRoot.GetComponent<State_Attack_Ranged>().ShootProjectile);
                 UnityEventTools.AddObjectPersistentListener<GameObject>(eventCatcher.onDamageEvent[0].eventCall, callback, _baseTroopRoot);
+            }
+            else if(BaseType == BaseTypeEnum.BaseRunner)
+            {
+
             }
         }
         else
@@ -578,10 +592,14 @@ public class ToolManagerEditor : EditorWindow
                 UnityAction<GameObject> callback = new UnityAction<GameObject>(_baseTroopRoot.GetComponent<State_Attack_Melee>().DealDamage);
                 UnityEventTools.AddObjectPersistentListener<GameObject>(eventCatcher.onDamageEvent[0].eventCall, callback, _baseTroopRoot);
             }
-            else
+            else if (BaseType == BaseTypeEnum.BaseRanged)
             {
                 UnityAction<GameObject> callback = new UnityAction<GameObject>(_baseTroopRoot.GetComponent<State_Attack_Ranged>().ShootProjectile);
                 UnityEventTools.AddObjectPersistentListener<GameObject>(eventCatcher.onDamageEvent[0].eventCall, callback, _baseTroopRoot);
+            }
+            else if (BaseType == BaseTypeEnum.BaseRunner)
+            {
+
             }
         }
     }
@@ -596,7 +614,6 @@ public class ToolManagerEditor : EditorWindow
 
         Material troopTemporaryMaterial = (Material)AssetDatabase.LoadMainAssetAtPath(_temporaryMaterialPath);
 
-        // Comment this if you want to assign no temp material
         foreach (Transform g in troopRoot.transform.GetChild(0).transform.GetComponentsInChildren<Transform>())
         {
             if (g.GetComponent<SkinnedMeshRenderer>())
@@ -614,7 +631,7 @@ public class ToolManagerEditor : EditorWindow
 
         PrefabUtility.SaveAsPrefabAsset(troopRoot, _troopPath + "/" + _debugName + Name + ".prefab");
         GameObject.DestroyImmediate(troopRoot);
-        Debug.Log($"<color=blue>{_debugName} {Name}</color> Prefab Has Been Created! This is the path: <color=white>{_troopPath}/{_debugName}{Name}.prefab</color>");
+        Debug.Log($"<color={_debugName}>{_debugName} {Name}</color> Prefab Has Been Created! This is the path: <color=white>{_troopPath}/{_debugName}{Name}.prefab</color>");
     }
     // TROOP PREFAB CREATOR ====================================================================================================================================================
 }

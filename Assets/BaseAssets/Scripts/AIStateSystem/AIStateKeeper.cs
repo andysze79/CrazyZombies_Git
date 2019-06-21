@@ -1,4 +1,7 @@
-public static class AIStateKeeper 
+namespace BaseAssets.AI
 {
-    public enum States { Idle, Move, Attack, Death }
+    public static class AIStateKeeper
+    {
+        public enum States { Idle, Move, Attack, Death }
+    }
 }

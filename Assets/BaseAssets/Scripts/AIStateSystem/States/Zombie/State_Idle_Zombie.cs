@@ -1,26 +1,29 @@
 using UnityEngine;
 
-public class State_Idle_Zombie : State_Idle 
+namespace BaseAssets.AI
 {
-    // State Functions =========================================================================================================
-    protected override void RunOnce()
+    public class State_Idle_Zombie : State_Idle
     {
-        base.RunOnce();
+        // State Functions =========================================================================================================
+        protected override void RunOnce()
+        {
+            base.RunOnce();
+        }
+
+        public override void EnterState()
+        {
+            
+        }
+
+        public override void UpdateState()
+        {
+
+        }
+
+        public override void ExitState()
+        {
+
+        }
+        // =========================================================================================================================    
     }
-
-    public override void EnterState()
-    {
-        Owner.ChangeState(AIStateKeeper.States.Move);
-    }
-
-    public override void UpdateState()
-    {
-
-    }
-
-    public override void ExitState()
-    {
-
-    }
-    // =========================================================================================================================    
 }

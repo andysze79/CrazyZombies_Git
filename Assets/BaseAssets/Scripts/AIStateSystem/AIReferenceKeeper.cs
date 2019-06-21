@@ -1,14 +1,17 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AIReferenceKeeper : MonoBehaviour
+namespace BaseAssets.AI
 {
-    [HideInInspector] public NavMeshAgent agent = null;
-    [HideInInspector] public Animator animator = null;
-
-    private void Awake()
+    public class AIReferenceKeeper : MonoBehaviour
     {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponentInChildren<Animator>();    
-    }    
+        [HideInInspector] public NavMeshAgent agent = null;
+        [HideInInspector] public Animator animator = null;
+
+        private void Awake()
+        {
+            agent = GetComponent<NavMeshAgent>();
+            animator = GetComponentInChildren<Animator>();
+        }
+    }
 }

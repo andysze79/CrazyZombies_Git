@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: 8053ccaaaefbe604b97233b3638c2049
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: SkeletonTroop_Rig_V001:Bip001
+    100004: SkeletonTroop_Rig_V001:Bip001 Head
+    100006: SkeletonTroop_Rig_V001:Bip001 L Calf
+    100008: SkeletonTroop_Rig_V001:Bip001 L Clavicle
+    100010: SkeletonTroop_Rig_V001:Bip001 L Foot
+    100012: SkeletonTroop_Rig_V001:Bip001 L Forearm
+    100014: SkeletonTroop_Rig_V001:Bip001 L ForeTwist
+    100016: SkeletonTroop_Rig_V001:Bip001 L ForeTwist1
+    100018: SkeletonTroop_Rig_V001:Bip001 L Hand
+    100020: SkeletonTroop_Rig_V001:Bip001 L Thigh
+    100022: SkeletonTroop_Rig_V001:Bip001 L Toe
+    100024: SkeletonTroop_Rig_V001:Bip001 L UpperArm
+    100026: SkeletonTroop_Rig_V001:Bip001 Neck
+    100028: SkeletonTroop_Rig_V001:Bip001 Pelvis
+    100030: SkeletonTroop_Rig_V001:Bip001 R Calf
+    100032: SkeletonTroop_Rig_V001:Bip001 R Clavicle
+    100034: SkeletonTroop_Rig_V001:Bip001 R Foot
+    100036: SkeletonTroop_Rig_V001:Bip001 R Forearm
+    100038: SkeletonTroop_Rig_V001:Bip001 R ForeTwist
+    100040: SkeletonTroop_Rig_V001:Bip001 R ForeTwist1
+    100042: SkeletonTroop_Rig_V001:Bip001 R Hand
+    100044: SkeletonTroop_Rig_V001:Bip001 R Thigh
+    100046: SkeletonTroop_Rig_V001:Bip001 R Toe
+    100048: SkeletonTroop_Rig_V001:Bip001 R UpperArm
+    100050: SkeletonTroop_Rig_V001:Bip001 Spine
+    100052: SkeletonTroop_Rig_V001:Bip01 Spine1
+    100054: SkeletonTroop_Rig_V001:l_feet_ik
+    100056: SkeletonTroop_Rig_V001:l_ik_handle
+    100058: SkeletonTroop_Rig_V001:r_feet_ik
+    100060: SkeletonTroop_Rig_V001:r_ik_handle
+    100062: SkeletonTroop_Rig_V001:transform1
+    100064: SkeletonTroop_Rig_V001:transform2
+    100066: SkeletonTroop_Rig_V001:World
+    100068: SkeletonTroop_Rig_V001:wp
+    100070: SkeletonTroop_Rig_V001:wp_arm_pos
+    100072: SkeletonTroop_Rig_V001:wp_head_pos
+    400000: //RootNode
+    400002: SkeletonTroop_Rig_V001:Bip001
+    400004: SkeletonTroop_Rig_V001:Bip001 Head
+    400006: SkeletonTroop_Rig_V001:Bip001 L Calf
+    400008: SkeletonTroop_Rig_V001:Bip001 L Clavicle
+    400010: SkeletonTroop_Rig_V001:Bip001 L Foot
+    400012: SkeletonTroop_Rig_V001:Bip001 L Forearm
+    400014: SkeletonTroop_Rig_V001:Bip001 L ForeTwist
+    400016: SkeletonTroop_Rig_V001:Bip001 L ForeTwist1
+    400018: SkeletonTroop_Rig_V001:Bip001 L Hand
+    400020: SkeletonTroop_Rig_V001:Bip001 L Thigh
+    400022: SkeletonTroop_Rig_V001:Bip001 L Toe
+    400024: SkeletonTroop_Rig_V001:Bip001 L UpperArm
+    400026: SkeletonTroop_Rig_V001:Bip001 Neck
+    400028: SkeletonTroop_Rig_V001:Bip001 Pelvis
+    400030: SkeletonTroop_Rig_V001:Bip001 R Calf
+    400032: SkeletonTroop_Rig_V001:Bip001 R Clavicle
+    400034: SkeletonTroop_Rig_V001:Bip001 R Foot
+    400036: SkeletonTroop_Rig_V001:Bip001 R Forearm
+    400038: SkeletonTroop_Rig_V001:Bip001 R ForeTwist
+    400040: SkeletonTroop_Rig_V001:Bip001 R ForeTwist1
+    400042: SkeletonTroop_Rig_V001:Bip001 R Hand
+    400044: SkeletonTroop_Rig_V001:Bip001 R Thigh
+    400046: SkeletonTroop_Rig_V001:Bip001 R Toe
+    400048: SkeletonTroop_Rig_V001:Bip001 R UpperArm
+    400050: SkeletonTroop_Rig_V001:Bip001 Spine
+    400052: SkeletonTroop_Rig_V001:Bip01 Spine1
+    400054: SkeletonTroop_Rig_V001:l_feet_ik
+    400056: SkeletonTroop_Rig_V001:l_ik_handle
+    400058: SkeletonTroop_Rig_V001:r_feet_ik
+    400060: SkeletonTroop_Rig_V001:r_ik_handle
+    400062: SkeletonTroop_Rig_V001:transform1
+    400064: SkeletonTroop_Rig_V001:transform2
+    400066: SkeletonTroop_Rig_V001:World
+    400068: SkeletonTroop_Rig_V001:wp
+    400070: SkeletonTroop_Rig_V001:wp_arm_pos
+    400072: SkeletonTroop_Rig_V001:wp_head_pos
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

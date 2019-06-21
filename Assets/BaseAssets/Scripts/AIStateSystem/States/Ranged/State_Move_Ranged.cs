@@ -1,26 +1,29 @@
 using UnityEngine;
 
-public class State_Move_Ranged : State_Move 
+namespace BaseAssets.AI
 {
-    // State Functions =========================================================================================================
-    protected override void RunOnce()
+    public class State_Move_Ranged : State_Move
     {
-        base.RunOnce();
-    }
+        // State Functions =========================================================================================================
+        protected override void RunOnce()
+        {
+            base.RunOnce();
+        }
 
-    public override void EnterState()
-    {
-        base.EnterState();
-    }
+        public override void EnterState()
+        {
+            base.EnterState();
+        }
 
-    public override void UpdateState()
-    {
-        base.UpdateState();
-    }
+        public override void UpdateState()
+        {
+            base.UpdateState();
+        }
 
-    public override void ExitState()
-    {
+        public override void ExitState()
+        {
 
+        }
+        // =========================================================================================================================
     }
-    // =========================================================================================================================
 }

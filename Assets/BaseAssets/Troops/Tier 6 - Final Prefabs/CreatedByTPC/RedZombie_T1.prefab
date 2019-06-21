@@ -7,6 +7,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1018316106991105227, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684884259081874097, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321453113180751424, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: troopType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321453113180751424, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: searchLayerMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321453113180751424, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: AttackDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321453113180751424, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: MaximumHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321453113180751424, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: CurrentHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321453113180751425, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321453113180751425, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: m_Speed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8321453113180751452, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
         type: 3}
       propertyPath: m_Name
@@ -87,26 +132,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 8321453113180751425, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
-        type: 3}
-      propertyPath: m_Height
-      value: 1.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 8321453113180751425, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
-        type: 3}
-      propertyPath: m_Speed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8321453113180751424, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
-        type: 3}
-      propertyPath: troopType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8321453113180751424, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
-        type: 3}
-      propertyPath: searchLayerMask.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
     - target: {fileID: 391889988068673577, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -148,11 +173,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5988528264024141922, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1018316106991105227, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
         type: 3}
       propertyPath: m_Layer
       value: 10

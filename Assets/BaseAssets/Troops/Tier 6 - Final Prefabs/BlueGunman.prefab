@@ -52,6 +52,12 @@ PrefabInstance:
       propertyPath: projectileSpawnOffset.z
       value: 1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
+        type: 3}
+      propertyPath: arrowPrefab
+      value: 
+      objectReference: {fileID: 246991894723587021, guid: aa2479dda1f64b04883484da3df647b2,
+        type: 3}
     - target: {fileID: 8622532448416780556, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
       propertyPath: m_Radius
@@ -178,8 +184,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 511516986, guid: 31c28c48480883e498de8322009e6e74, type: 3}
       propertyPath: onDamageEvent.Array.data[0].eventCall.m_TypeName
-      value: EventCall+OnDamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      value: BaseAssets.AI.EventCall+OnDamageEvent, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     - target: {fileID: 8038914409106574827, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
