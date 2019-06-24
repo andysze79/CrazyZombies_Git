@@ -22,4 +22,8 @@ public class ObjectCounter : MonoBehaviour
         StartCoroutine(UpdateAmount());
     }
 
+    public int GetAmount() {
+        return GameObject.FindGameObjectsWithTag(m_ObjTag).Length;
+    }
+
 }
