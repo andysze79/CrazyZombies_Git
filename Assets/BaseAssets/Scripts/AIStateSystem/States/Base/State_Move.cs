@@ -7,6 +7,7 @@ namespace BaseAssets.AI
     {
         private float currentSpeed;
         private Vector3 previousPosition;
+        private float distanceToOrigin = 0f;
 
         // State Functions =========================================================================================================
         protected override void RunOnce()
@@ -48,24 +49,6 @@ namespace BaseAssets.AI
                 return;
             }
 
-            CheckIfShouldChangeAnimation();
-        }
-
-        private void CheckIfShouldChangeAnimation()
-        {
-            Vector3 curMove = transform.position - previousPosition;
-            currentSpeed = curMove.magnitude / Time.deltaTime;
-            previousPosition = transform.position;
-
-            if (currentSpeed < 2f)
-            {
-                AIStateHelperMethods.PlayAnimation(Reference.animator, "Idle");
-            }
-            else
-            {
-                AIStateHelperMethods.PlayAnimation(Reference.animator, "Run");
-            }
-
             CheckIfDestinationExists();
         }
 
@@ -91,7 +74,11 @@ namespace BaseAssets.AI
         {
             if (Data.origin != null)
             {
-                if (Vector3.Distance(new Vector3(Data.origin.position.x, transform.position.y, Data.origin.position.z), transform.position) > 0.5f && Data.enemy == null)
+                distanceToOrigin = Vector3.Distance(new Vector3(Data.origin.position.x, transform.position.y, Data.origin.position.z), transform.position);
+
+                Reference.agent.speed = AIStateHelperMethods.GetAgentSpeedBasedOnDistance(Data, distanceToOrigin);
+
+                if (distanceToOrigin > 0.5f && Data.enemy == null)
                 {
                     Data.currentMoveTo = Data.origin;
                     //AIStateHelperMethods.SetAgentPath(transform.position, Data.currentMoveTo.position, Reference.agent);
@@ -129,7 +116,26 @@ namespace BaseAssets.AI
 
             if (Owner.ActiveState != AIStateKeeper.States.Move) return;
 
-            Gizmos.color = Color.green;
+            if(distanceToOrigin > Data.maxMovementDistance)
+            {
+                Gizmos.color = Color.red;
+                AIStateHelperMethods.DrawString(AIStateHelperMethods.Remap(Reference.agent.speed, Data.minSpeed, Data.maxSpeed, 0f, 100f).ToString("0.0"), Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 0f), Color.red);
+                //AIStateHelperMethods.DrawString(distanceToOrigin.ToString("0.0") + "D", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 0f), Color.red);
+                //AIStateHelperMethods.DrawString(Reference.agent.speed.ToString("0.0") + "S", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 1f), Color.red);
+            }
+            else if(distanceToOrigin < Data.minMovementDistance)
+            {
+                Gizmos.color = Color.red;
+                AIStateHelperMethods.DrawString(distanceToOrigin.ToString("0.0") + "D", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 0f), Color.red);
+                AIStateHelperMethods.DrawString(Reference.agent.speed.ToString("0.0") + "S", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 1f), Color.red);
+            }
+            else
+            {
+                Gizmos.color = Color.green;
+                AIStateHelperMethods.DrawString(distanceToOrigin.ToString("0.0") + "D", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 0f), Color.green);
+                AIStateHelperMethods.DrawString(Reference.agent.speed.ToString("0.0") + "S", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 1f), Color.green);
+            }
+
             if (Reference.agent.path.corners.Length > 0)
             {
                 for (var i = 1; i < Reference.agent.path.corners.Length; i++)

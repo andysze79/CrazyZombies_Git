@@ -244,12 +244,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &32355293
@@ -340,12 +334,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &52207961
@@ -436,12 +424,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &84565396
@@ -533,12 +515,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &85529035
@@ -625,12 +601,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &85831674
@@ -717,12 +687,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0.08
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 95416375}
   Priority1: 3
@@ -731,6 +701,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &95416377
 Transform:
@@ -840,7 +815,7 @@ Transform:
   - {fileID: 1483852099}
   - {fileID: 487017870}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &154256589
 GameObject:
@@ -888,7 +863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bfe4421c0df0e94e8c7d22752655f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pMaterial: {fileID: 13400000, guid: a29ad3ace4e9e5e4580b7aaab80dee8c, type: 2}
 --- !u!65 &154256592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1170,12 +1144,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &187248055
@@ -1266,12 +1234,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 3
   formationMoveSpeed: 3
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &190664557
@@ -1335,8 +1297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -1362,12 +1324,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &198975885
@@ -1517,8 +1473,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 0, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -1547,12 +1503,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 17.41, y: 0, z: 3.75}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 32.07, y: 0, z: 22.64}
   targetAreaPosition: {x: 0, y: 0, z: 48.3}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 17.41, y: 0, z: 3.75}
+  targetAreaDimension: {x: 32.07, y: 0, z: 22.64}
   spawnLocations: []
   Priority1: 0
   Priority2: 3
@@ -1560,6 +1516,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 7
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &217424758
 Transform:
@@ -1637,12 +1598,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 12
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &247864179
@@ -1703,8 +1658,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -1740,12 +1695,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 12
   formationMoveSpeed: 3.5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &250308202
@@ -1803,7 +1752,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &265001049
 GameObject:
@@ -1887,12 +1836,6 @@ MonoBehaviour:
   loopMovement: 1
   initialDelayBeforeMove: 5
   formationMoveSpeed: -5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!4 &265001052
@@ -1940,8 +1883,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 0, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -1972,12 +1915,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 10.84, y: 0, z: 2.3}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 32.07, y: 0, z: 22.64}
   targetAreaPosition: {x: 0, y: 0, z: 48.3}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 10.84, y: 0, z: 2.3}
+  targetAreaDimension: {x: 32.07, y: 0, z: 22.64}
   spawnLocations: []
   Priority1: 3
   Priority2: 3
@@ -1985,6 +1928,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 10
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &273177406
 Transform:
@@ -2061,7 +2009,7 @@ Transform:
   - {fileID: 1824473755}
   - {fileID: 885725029}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &312203173
 GameObject:
@@ -2120,12 +2068,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
   spawnAreaPosition: {x: 0, y: 0, z: 25.19}
-  targetAreaDimension: {x: 49, y: 0, z: 13.32}
   targetAreaPosition: {x: 3.53, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
+  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
+  targetAreaDimension: {x: 49, y: 0, z: 13.32}
   spawnLocations:
   - {fileID: 0}
   Priority1: 0
@@ -2134,6 +2082,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &312203175
 Transform:
@@ -2207,12 +2160,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &372628446
@@ -2336,12 +2283,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &441479104
@@ -2472,12 +2413,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &459517434
@@ -2550,12 +2485,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &487017869
@@ -3009,12 +2938,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &543748199
@@ -3119,12 +3042,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &547863594
@@ -3169,8 +3086,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 0, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -3201,12 +3118,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 10.84, y: 0, z: 2.3}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 32.07, y: 0, z: 22.64}
   targetAreaPosition: {x: 0, y: 0, z: 48.3}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 10.84, y: 0, z: 2.3}
+  targetAreaDimension: {x: 32.07, y: 0, z: 22.64}
   spawnLocations: []
   Priority1: 3
   Priority2: 3
@@ -3214,6 +3131,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 10
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &570464083
 Transform:
@@ -3288,12 +3210,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 3
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 572809461}
   Priority1: 3
@@ -3302,6 +3224,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 5.5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &572809463
 Transform:
@@ -3399,12 +3326,6 @@ MonoBehaviour:
   loopMovement: 1
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!4 &583984945
@@ -3498,12 +3419,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &601532845
@@ -3590,12 +3505,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &614755157
@@ -3667,12 +3576,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
   spawnAreaPosition: {x: 0, y: 0, z: -25.19}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
+  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations: []
   Priority1: 0
   Priority2: 1
@@ -3680,6 +3589,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &630783617
 Transform:
@@ -3768,12 +3682,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 3
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 632099293}
   Priority1: 3
@@ -3782,6 +3696,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 5.5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &655547651 stripped
 Transform:
@@ -3820,8 +3739,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -3847,12 +3766,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &660323353
@@ -3967,6 +3880,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2126488389}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &714595502
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4678370554699312579, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_Name
+      value: RedInfantry
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678370554699312578, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 48.348507
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678370554699312578, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.162811e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678370554699312578, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -412.65634
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678370554699312578, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678370554699312578, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678370554699312578, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678370554699312578, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678370554699312578, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678370554699312578, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678370554699312578, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678370554699312578, guid: aab672eff6922d946b820ed4b81bfd70,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aab672eff6922d946b820ed4b81bfd70, type: 3}
 --- !u!1 &763135101
 GameObject:
   m_ObjectHideFlags: 0
@@ -4004,8 +3986,77 @@ Transform:
   - {fileID: 1335534893}
   - {fileID: 1526403048}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &765372876
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5092302984765719049, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_Name
+      value: BlueInfantry
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092302984765719048, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 44.545662
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092302984765719048, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.2899424e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092302984765719048, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -418.38177
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092302984765719048, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092302984765719048, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092302984765719048, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092302984765719048, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092302984765719048, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092302984765719048, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092302984765719048, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092302984765719048, guid: 7601443fbc0e63248847c46f8e7f4830,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7601443fbc0e63248847c46f8e7f4830, type: 3}
 --- !u!1 &769738282
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,12 +4115,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 769738282}
   Priority1: 3
@@ -4078,6 +4129,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 3
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &769738284
 Transform:
@@ -4150,12 +4206,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 20.71, y: 0, z: 2.34}
   endlessTargetAreaPosition: {x: 0, y: 0, z: -137.44}
-  spawnAreaDimensions: {x: 22.14, y: 0, z: 3.96}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 20.71, y: 0, z: 2.34}
+  spawnAreaDimensions: {x: 22.14, y: 0, z: 3.96}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 806965748}
   Priority1: 3
@@ -4164,6 +4220,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &806965750
 Transform:
@@ -4210,8 +4271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -4237,12 +4298,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &852817045
@@ -4301,8 +4356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 0, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -4328,12 +4383,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 57.37, y: 0, z: 23.6}
   endlessTargetAreaPosition: {x: 0, y: 0, z: -199.3}
-  spawnAreaDimensions: {x: 18.75, y: 0, z: 0.15}
   spawnAreaPosition: {x: 0, y: 0, z: -38.67}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 57.37, y: 0, z: 23.6}
+  spawnAreaDimensions: {x: 18.75, y: 0, z: 0.15}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations: []
   Priority1: 3
   Priority2: 3
@@ -4341,6 +4396,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &857230311
 Transform:
@@ -4402,7 +4462,7 @@ Transform:
   - {fileID: 1696484516}
   - {fileID: 1119936185}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &885725026
 GameObject:
@@ -4478,12 +4538,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!4 &885725029
@@ -4651,12 +4705,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &904479788
@@ -4744,12 +4792,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 3
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 911699730}
   Priority1: 3
@@ -4758,6 +4806,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 5.5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &911699732
 Transform:
@@ -4850,12 +4903,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
   endlessTargetAreaPosition: {x: 0, y: 0, z: -66.38}
-  spawnAreaDimensions: {x: 59.21, y: 0, z: 25.8}
   spawnAreaPosition: {x: 0, y: 0, z: 25.19}
-  targetAreaDimension: {x: 49, y: 0, z: 13.32}
   targetAreaPosition: {x: 3.53, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
+  spawnAreaDimensions: {x: 59.21, y: 0, z: 25.8}
+  targetAreaDimension: {x: 49, y: 0, z: 13.32}
   spawnLocations:
   - {fileID: 0}
   Priority1: 0
@@ -4864,6 +4917,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!1 &936224974
 GameObject:
@@ -4941,12 +4999,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &936224977
@@ -5120,12 +5172,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
   spawnAreaPosition: {x: 0, y: 0, z: 25.19}
-  targetAreaDimension: {x: 49, y: 0, z: 13.32}
   targetAreaPosition: {x: 3.53, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
+  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
+  targetAreaDimension: {x: 49, y: 0, z: 13.32}
   spawnLocations:
   - {fileID: 0}
   Priority1: 0
@@ -5134,6 +5186,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &973936295
 Transform:
@@ -5180,8 +5237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -5207,12 +5264,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &974924618
@@ -5467,7 +5518,7 @@ Transform:
   - {fileID: 1655401639}
   - {fileID: 1507676741}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1017837247
 GameObject:
@@ -5502,7 +5553,7 @@ Transform:
   - {fileID: 1793890734}
   - {fileID: 496955709}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1020825665
 GameObject:
@@ -5731,12 +5782,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0.08
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1051684049}
   Priority1: 3
@@ -5745,6 +5796,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1051684051
 Transform:
@@ -6088,12 +6144,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1094079933
@@ -6198,12 +6248,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1105761687
@@ -6341,8 +6385,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -6378,12 +6422,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 12
   formationMoveSpeed: 3.5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1167693476
@@ -6444,8 +6482,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -6471,12 +6509,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1169927860
@@ -6689,12 +6721,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
   spawnAreaPosition: {x: 0, y: 0, z: -25.19}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
+  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations: []
   Priority1: 0
   Priority2: 1
@@ -6702,6 +6734,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1195176568
 Transform:
@@ -6779,12 +6816,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1214964497
@@ -7645,12 +7676,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0.08
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1313371466}
   Priority1: 3
@@ -7659,6 +7690,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1313371468
 Transform:
@@ -7746,12 +7782,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1319347665
@@ -7825,12 +7855,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0.25
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 5.5, y: 0, z: 9.9}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 5.5, y: 0, z: 9.9}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations: []
   Priority1: 3
   Priority2: 3
@@ -7838,6 +7868,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 10
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1332772330
 Transform:
@@ -7911,12 +7946,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 3
   spawnDelayPerTroop: 0.08
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1335534891}
   Priority1: 3
@@ -7925,6 +7960,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1335534893
 Transform:
@@ -7972,7 +8012,7 @@ Transform:
   - {fileID: 1712835885}
   - {fileID: 1561309490}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1335643045
 MonoBehaviour:
@@ -8174,12 +8214,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 3
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1360603078}
   Priority1: 3
@@ -8188,6 +8228,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 5.5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1360603080
 Transform:
@@ -8364,12 +8409,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0.08
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1383073262}
   Priority1: 3
@@ -8378,6 +8423,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1383073264
 Transform:
@@ -8425,7 +8475,7 @@ Transform:
   - {fileID: 1897406636}
   - {fileID: 265001052}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1413159508
 PrefabInstance:
@@ -8721,8 +8771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 0, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -8753,12 +8803,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 10.84, y: 0, z: 2.3}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 32.07, y: 0, z: 22.64}
   targetAreaPosition: {x: 0, y: 0, z: 48.3}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 10.84, y: 0, z: 2.3}
+  targetAreaDimension: {x: 32.07, y: 0, z: 22.64}
   spawnLocations: []
   Priority1: 3
   Priority2: 3
@@ -8766,6 +8816,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 10
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1426506788
 Transform:
@@ -8811,8 +8866,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 0, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -8838,12 +8893,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 68.9, y: 0, z: 23.6}
   endlessTargetAreaPosition: {x: 0, y: 0, z: -199.3}
-  spawnAreaDimensions: {x: 18.75, y: 0, z: 0.15}
   spawnAreaPosition: {x: 0, y: 0, z: -38.67}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 68.9, y: 0, z: 23.6}
+  spawnAreaDimensions: {x: 18.75, y: 0, z: 0.15}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations: []
   Priority1: 3
   Priority2: 3
@@ -8851,6 +8906,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1444814447
 Transform:
@@ -9047,7 +9107,7 @@ Transform:
   - {fileID: 1609679561}
   - {fileID: 614755155}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1464690116
 GameObject:
@@ -9508,8 +9568,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -9535,12 +9595,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1507676740
@@ -10012,7 +10066,7 @@ Transform:
   - {fileID: 4437039588861887074}
   - {fileID: 1461599636}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1540644533
 GameObject:
@@ -10072,12 +10126,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 3
   spawnDelayPerTroop: 0.08
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1540644533}
   Priority1: 3
@@ -10086,6 +10140,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1540644535
 Transform:
@@ -10173,12 +10232,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1555721018
@@ -10255,7 +10308,7 @@ Transform:
   - {fileID: 84565397}
   - {fileID: 247864180}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1603193912
 GameObject:
@@ -10315,12 +10368,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
   endlessTargetAreaPosition: {x: 0, y: 0, z: -26.02}
-  spawnAreaDimensions: {x: 10, y: 0, z: 6.08}
   spawnAreaPosition: {x: 8.1, y: 0, z: -6.55}
-  targetAreaDimension: {x: 58.61, y: 0, z: 8.6}
   targetAreaPosition: {x: 0, y: 0, z: 9.13}
+  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
+  spawnAreaDimensions: {x: 10, y: 0, z: 6.08}
+  targetAreaDimension: {x: 58.61, y: 0, z: 8.6}
   spawnLocations:
   - {fileID: 0}
   Priority1: 3
@@ -10329,6 +10382,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 10
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1603193914
 Transform:
@@ -10420,12 +10478,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1609679563
@@ -10470,8 +10522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 0, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -10500,12 +10552,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 17.41, y: 0, z: 3.75}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 32.07, y: 0, z: 22.64}
   targetAreaPosition: {x: 0, y: 0, z: 48.3}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 17.41, y: 0, z: 3.75}
+  targetAreaDimension: {x: 32.07, y: 0, z: 22.64}
   spawnLocations: []
   Priority1: 0
   Priority2: 3
@@ -10513,6 +10565,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 7
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1630546913
 Transform:
@@ -11021,8 +11078,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -11048,12 +11105,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1655401638
@@ -11405,12 +11456,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0.08
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1666959363}
   Priority1: 3
@@ -11419,6 +11470,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1666959365
 Transform:
@@ -11600,12 +11656,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0.08
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1686121776}
   Priority1: 3
@@ -11614,6 +11670,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1686121778
 Transform:
@@ -11827,12 +11888,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
   spawnAreaPosition: {x: 0, y: 0, z: 25.19}
-  targetAreaDimension: {x: 49, y: 0, z: 13.32}
   targetAreaPosition: {x: 3.53, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
+  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
+  targetAreaDimension: {x: 49, y: 0, z: 13.32}
   spawnLocations:
   - {fileID: 0}
   Priority1: 0
@@ -11841,6 +11902,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1704066318
 Transform:
@@ -12040,12 +12106,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1721579678
@@ -12105,8 +12165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -12132,12 +12192,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1752004993
@@ -12223,12 +12277,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
   spawnAreaPosition: {x: 0, y: 0, z: -25.19}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
+  spawnAreaDimensions: {x: 59.21, y: 0, z: 6.08}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations: []
   Priority1: 0
   Priority2: 1
@@ -12236,6 +12290,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1752937216
 Transform:
@@ -12309,12 +12368,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 3
   spawnDelayPerTroop: 0.08
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1754384535}
   Priority1: 3
@@ -12323,6 +12382,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1754384537
 Transform:
@@ -12594,12 +12658,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!4 &1824473755
@@ -12776,12 +12834,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0.08
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1833069894}
   Priority1: 3
@@ -12790,6 +12848,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1833069896
 Transform:
@@ -12864,12 +12927,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
   endlessTargetAreaPosition: {x: 0, y: 0, z: -26.02}
-  spawnAreaDimensions: {x: 27.35, y: 0, z: 6.08}
   spawnAreaPosition: {x: 0, y: 0, z: -27.4}
-  targetAreaDimension: {x: 58.61, y: 0, z: 8.6}
   targetAreaPosition: {x: 0, y: 0, z: 9.13}
+  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
+  spawnAreaDimensions: {x: 27.35, y: 0, z: 6.08}
+  targetAreaDimension: {x: 58.61, y: 0, z: 8.6}
   spawnLocations:
   - {fileID: 0}
   Priority1: 3
@@ -12878,6 +12941,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 1
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1837271361
 Transform:
@@ -12955,12 +13023,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1837865483
@@ -13047,12 +13109,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 3
   spawnDelayPerTroop: 0.08
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1856117327}
   Priority1: 3
@@ -13061,6 +13123,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1856117329
 Transform:
@@ -13134,20 +13201,25 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 1872082588}
-  Priority1: 3
-  Priority2: 3
-  Priority3: 3
+  Priority1: 4
+  Priority2: 4
+  Priority3: 4
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 3
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1872082590
 Transform:
@@ -13161,7 +13233,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1888307461
 GameObject:
@@ -13225,12 +13297,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1888307463
@@ -13317,12 +13383,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
   endlessTargetAreaPosition: {x: 0, y: 0, z: -26.02}
-  spawnAreaDimensions: {x: 10, y: 0, z: 6.08}
   spawnAreaPosition: {x: 8.1, y: 0, z: -6.55}
-  targetAreaDimension: {x: 58.61, y: 0, z: 8.6}
   targetAreaPosition: {x: 0, y: 0, z: 9.13}
+  endlessTargetAreaDimensions: {x: 58.93, y: 0, z: 8.2}
+  spawnAreaDimensions: {x: 10, y: 0, z: 6.08}
+  targetAreaDimension: {x: 58.61, y: 0, z: 8.6}
   spawnLocations:
   - {fileID: 0}
   Priority1: 3
@@ -13331,6 +13397,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 10
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &1897406636
 Transform:
@@ -13408,12 +13479,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1910979144
@@ -13473,8 +13538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -13500,12 +13565,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &1913475778
@@ -13643,7 +13702,7 @@ Transform:
   - {fileID: 1704066318}
   - {fileID: 915040841}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2037821257
 GameObject:
@@ -13768,8 +13827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showGizmoOnSelect: 0
-  gizmoInPlayMode: 1
-  gizmoInEditMode: 1
+  gizmoInPlayMode: 0
+  gizmoInEditMode: 0
   gizmoScale: 1
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -13795,12 +13854,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &2040241723
@@ -13984,12 +14037,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &2051933460
@@ -14077,12 +14124,12 @@ MonoBehaviour:
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
   endlessTargetAreaPosition: {x: 0, y: 0, z: 0}
-  spawnAreaDimensions: {x: 0, y: 0, z: 0}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 0, y: 0, z: 0}
+  spawnAreaDimensions: {x: 0, y: 0, z: 0}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 2072300497}
   Priority1: 3
@@ -14091,6 +14138,11 @@ MonoBehaviour:
   automateFormationSwitch: 1
   loopAutomation: 0
   automatedTime: 5
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!1 &2085161444
 GameObject:
@@ -14143,18 +14195,18 @@ MonoBehaviour:
   endlessTroopCountPerBurst: 5
   endlessBurstDelay: 1
   endlessBurstDelayInitial: 1
-  endlessDestroyTime: 0
+  endlessDestroyTime: 10
   burstCount: 1
   burstDelay: 1
   burstSpawnDelayInitial: 0
   spawnDelayInitial: 0
   spawnDelayPerTroop: 0
-  endlessTargetAreaDimensions: {x: 42, y: 0, z: 2.4}
   endlessTargetAreaPosition: {x: 0, y: 0, z: -70.7}
-  spawnAreaDimensions: {x: 26.1, y: 0, z: 6.71}
   spawnAreaPosition: {x: 0, y: 0, z: 0}
-  targetAreaDimension: {x: 0, y: 0, z: 0}
   targetAreaPosition: {x: 0, y: 0, z: 0}
+  endlessTargetAreaDimensions: {x: 42, y: 0, z: 2.4}
+  spawnAreaDimensions: {x: 26.1, y: 0, z: 6.71}
+  targetAreaDimension: {x: 0, y: 0, z: 0}
   spawnLocations:
   - {fileID: 2085161444}
   Priority1: 4
@@ -14163,6 +14215,11 @@ MonoBehaviour:
   automateFormationSwitch: 0
   loopAutomation: 0
   automatedTime: 0
+  overwriteSpeed: 0
+  maxMovementDistance: 10
+  minMovementDistance: 1
+  maxSpeed: 10
+  minSpeed: 1
   timelineFormationIndex: -1
 --- !u!4 &2085161446
 Transform:
@@ -14236,12 +14293,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 5
   formationMoveSpeed: 5
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &2123874711
@@ -14596,12 +14647,6 @@ MonoBehaviour:
   loopMovement: 0
   initialDelayBeforeMove: 3
   formationMoveSpeed: 3
-  overwriteSpeed: 0
-  maxMovementDistance: 10
-  minMovementDistance: 1
-  maxSpeed: 10
-  minSpeed: 1
-  spawnManager: {fileID: 0}
   formationMover: {fileID: 0}
   pathCreator: {fileID: 0}
 --- !u!114 &2144837606
@@ -14629,7 +14674,7 @@ Transform:
   m_Children:
   - {fileID: 1825805835}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &525342642994208511 stripped
 Transform:
@@ -14799,16 +14844,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8889675422653839790, guid: f4fdc67b361dd1047b6571fff6938500,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 743fff2e3f2b7ea42abbc2994daf639e, type: 2}
-    - target: {fileID: 8889675422653839790, guid: f4fdc67b361dd1047b6571fff6938500,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: a6a83bc3b15b04a4985f1a0f493ff724, type: 2}
     - target: {fileID: 7249379091436362588, guid: f4fdc67b361dd1047b6571fff6938500,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -14990,6 +15025,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 246991894723587021, guid: aa2479dda1f64b04883484da3df647b2,
         type: 3}
+    - target: {fileID: 8889675422653839790, guid: f4fdc67b361dd1047b6571fff6938500,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 743fff2e3f2b7ea42abbc2994daf639e, type: 2}
+    - target: {fileID: 8889675422653839790, guid: f4fdc67b361dd1047b6571fff6938500,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6a83bc3b15b04a4985f1a0f493ff724, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4fdc67b361dd1047b6571fff6938500, type: 3}
 --- !u!4 &3012942433750595139 stripped

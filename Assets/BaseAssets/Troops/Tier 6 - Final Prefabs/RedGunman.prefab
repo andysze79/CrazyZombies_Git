@@ -25,12 +25,12 @@ PrefabInstance:
     - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
       propertyPath: AttackDistance
-      value: 112.58
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
       propertyPath: SearchRadius
-      value: 112.58
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
@@ -40,7 +40,7 @@ PrefabInstance:
     - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
       propertyPath: projectileTargetOffsetY
-      value: 10
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
@@ -52,25 +52,20 @@ PrefabInstance:
       propertyPath: projectileSpawnOffset.z
       value: 1.8
       objectReference: {fileID: 0}
-    - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
-        type: 3}
-      propertyPath: Damage
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780556, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
       propertyPath: m_Radius
-      value: 0.4
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780556, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
       propertyPath: m_Speed
-      value: 50
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780556, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
       propertyPath: m_Acceleration
-      value: 240
+      value: 300000
       objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780556, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
@@ -80,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 8622532448416780556, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
       propertyPath: m_AngularSpeed
-      value: 300
+      value: 300000
       objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780560, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
@@ -137,6 +132,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8622532448416780560, guid: 31c28c48480883e498de8322009e6e74,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622532448416780560, guid: 31c28c48480883e498de8322009e6e74,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622532448416780560, guid: 31c28c48480883e498de8322009e6e74,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8038914409101361285, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
       propertyPath: m_Layer
@@ -184,8 +194,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 511516986, guid: 31c28c48480883e498de8322009e6e74, type: 3}
       propertyPath: onDamageEvent.Array.data[0].eventCall.m_TypeName
-      value: BaseAssets.AI.EventCall+OnDamageEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
+      value: EventCall+OnDamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
       objectReference: {fileID: 0}
     - target: {fileID: 511516986, guid: 31c28c48480883e498de8322009e6e74, type: 3}
       propertyPath: onDamageEvent.Array.data[0].eventCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument

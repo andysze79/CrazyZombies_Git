@@ -15,12 +15,11 @@ namespace BaseAssets.AI
 
         public override void EnterState()
         {
-            Reference.agent.isStopped = true;
+            if (Reference.agent && Reference.agent.enabled) Reference.agent.isStopped = true;
             AIStateHelperMethods.RemoveFromAttackerList(Data);
             AIStateHelperMethods.PlayAnimation(Reference.animator, "Death");
             StartCoroutine(SinkDelay());
             Reference.animator.gameObject.layer = 0;
-
         }
 
         public override void UpdateState()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using BaseAssets.Tools;
 
 namespace BaseAssets.AI
@@ -21,6 +22,8 @@ namespace BaseAssets.AI
         public bool PrioritizeNotTargeted = true;
         public bool IsInvulnerable = false;
         public bool IsTargeted = false;
+        public ShowVariables showVariables = ShowVariables.Attack;
+        public enum ShowVariables { Health, Attack, Death, Movement }
         public float MaximumHealth = 100f;
         public float CurrentHealth = 100f;
         public float Damage = 10f;
@@ -28,7 +31,10 @@ namespace BaseAssets.AI
         public float SearchRadius = 10f;
         public float SinkDelay = 2f;
         public float SinkSpeed = 1f;
-        public Vector3 searchPosition = new Vector3();
+        public float maxMovementDistance = 10f;
+        public float minMovementDistance = 1f;
+        public float maxSpeed = 10f;
+        public float minSpeed = 1f;
         public Transform origin = null;
         public Transform currentMoveTo = null;
         public AIDataHolder enemy = null;
@@ -42,6 +48,7 @@ namespace BaseAssets.AI
         public GameObject arrowPrefab = null;
         public Vector3 projectileSpawnOffset = new Vector3();
 
+        [HideInInspector] public Vector3 searchPosition = new Vector3();
         private AIStateManager Owner = null;
 
         [HideInInspector] public SpawnManager Spawner = null;
@@ -61,13 +68,21 @@ namespace BaseAssets.AI
             CurrentHealth = MaximumHealth;
         }
 
+        private void Update()
+        {
+            if(Spawner && Spawner.overwriteSpeed)
+            {
+                OverwriteSpeed(Spawner.maxMovementDistance, Spawner.minMovementDistance, Spawner.maxSpeed, Spawner.minSpeed);
+            }    
+        }
+
         // External Transitions
         public void KillAI()
         {
             Owner.ChangeState(AIStateKeeper.States.Death);
         }
 
-        public void SetupAI(SpawnManager _Spawner, Transform _newOrigin, bool _changeState = true)
+        public void SetupAI(SpawnManager _Spawner, Transform _newOrigin, bool _changeState = true, float _deathDelay = 0)
         {
             origin = _newOrigin;
             Spawner = _Spawner;
@@ -81,6 +96,25 @@ namespace BaseAssets.AI
 
                 Owner.ChangeState(AIStateKeeper.States.Move);
             }
+
+            if(_deathDelay != 0)
+            {
+                StartCoroutine(DieAfterADelay(_deathDelay));
+            }
+        }
+
+        private IEnumerator DieAfterADelay(float _delay)
+        {
+            yield return new WaitForSeconds(_delay);
+            Owner.ChangeState(AIStateKeeper.States.Death);
+        }
+
+        public void OverwriteSpeed(float _maxMovementDistance, float _minMovementDistance, float _maxSpeed, float _minSpeed)
+        {
+            maxMovementDistance = _maxMovementDistance;
+            minMovementDistance = _minMovementDistance;
+            maxSpeed = _maxSpeed;
+            minSpeed = _minSpeed;
         }
 
         private void OnDrawGizmos()

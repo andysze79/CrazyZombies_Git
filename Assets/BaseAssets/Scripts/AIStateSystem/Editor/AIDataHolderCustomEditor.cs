@@ -9,17 +9,29 @@ namespace BaseAssets.AI.InternalEditor
     [CanEditMultipleObjects]
     public class AIDataHolderCustomEditor : Editor
     {
-        private void OnSceneGUI()
+        private void SetFieldCondition()
         {
-            //AIDataHolder dataHolder = (AIDataHolder)target;
+            ShowOnEnum("troopType", "Archer", "homingProjectile");
+            ShowOnEnum("troopType", "Archer", "projectileSpeedInSeconds");
+            ShowOnEnum("troopType", "Archer", "projectileTrajectoryHeight");
+            ShowOnEnum("troopType", "Archer", "projectileTargetOffsetY");
+            ShowOnEnum("troopType", "Archer", "arrowPrefab");
+            ShowOnEnum("troopType", "Archer", "projectileSpawnOffset");
 
-            //Handles.color = dataHolder.gizmoColor1;
-            //Undo.RecordObject(dataHolder, "Change Search Radius");
-            //dataHolder.SearchRadius = Handles.RadiusHandle(dataHolder.transform.rotation, dataHolder.transform.position, dataHolder.SearchRadius);
+            ShowOnEnum("showVariables", "Health", "MaximumHealth");
+            ShowOnEnum("showVariables", "Health", "CurrentHealth");
 
-            //Handles.color = dataHolder.gizmoColor2;
-            //Undo.RecordObject(dataHolder, "Change Attack Radius");
-            //dataHolder.AttackDistance = Handles.RadiusHandle(dataHolder.transform.rotation, dataHolder.transform.position, dataHolder.AttackDistance);
+            ShowOnEnum("showVariables", "Attack", "Damage");
+            ShowOnEnum("showVariables", "Attack", "AttackDistance");
+            ShowOnEnum("showVariables", "Attack", "SearchRadius");
+
+            ShowOnEnum("showVariables", "Death", "SinkDelay");
+            ShowOnEnum("showVariables", "Death", "SinkSpeed");
+
+            ShowOnEnum("showVariables", "Movement", "maxMovementDistance");
+            ShowOnEnum("showVariables", "Movement", "minMovementDistance");
+            ShowOnEnum("showVariables", "Movement", "maxSpeed");
+            ShowOnEnum("showVariables", "Movement", "minSpeed");
         }
 
         public override void OnInspectorGUI()
@@ -71,16 +83,6 @@ namespace BaseAssets.AI.InternalEditor
 
             // Apply changes to the serializedProperty - always do this in the end of OnInspectorGUI.
             serializedObject.ApplyModifiedProperties();
-        }
-
-        private void SetFieldCondition()
-        {
-            ShowOnEnum("troopType", "Archer", "homingProjectile");
-            ShowOnEnum("troopType", "Archer", "projectileSpeedInSeconds");
-            ShowOnEnum("troopType", "Archer", "projectileTrajectoryHeight");
-            ShowOnEnum("troopType", "Archer", "projectileTargetOffsetY");
-            ShowOnEnum("troopType", "Archer", "arrowPrefab");
-            ShowOnEnum("troopType", "Archer", "projectileSpawnOffset");
         }
 
         private void ShowOnEnum(string enumFieldName, string enumValue, string fieldName)

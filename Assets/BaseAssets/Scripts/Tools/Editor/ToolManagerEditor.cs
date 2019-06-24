@@ -39,11 +39,11 @@ public class ToolManagerEditor : EditorWindow
     private string BaseMeleePath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseMelee.prefab";
     private string BaseRangedPath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseRanged.prefab";
     private string BaseRunnerPath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseRunner.prefab";
-    private string BaseClassPath = "Assets/BaseAssets/Troops/Tier 5 - Base Class/CreatedByTPC";
+    private string BaseClassPath = "Assets/BaseAssets/Troops/Tier 5 - Base Class/IgnoreByGit";
     private string BlueTemporaryMaterialPath = "Assets/BaseAssets/ToolMaterials/TPCMaterials/TemporaryBlueTroopMaterial.mat";
     private string RedTemporaryMaterialPath = "Assets/BaseAssets/ToolMaterials/TPCMaterials/TemporaryRedTroopMaterial.mat";
-    private string BlueTroopPath = "Assets/BaseAssets/Troops/Tier 6 - Final Prefabs/CreatedByTPC";
-    private string RedTroopPath = "Assets/BaseAssets/Troops/Tier 6 - Final Prefabs/CreatedByTPC";
+    private string BlueTroopPath = "Assets/BaseAssets/Troops/Tier 6 - Final Prefabs/IgnoreByGit";
+    private string RedTroopPath = "Assets/BaseAssets/Troops/Tier 6 - Final Prefabs/IgnoreByGit";
 
     private string TroopPrefabPath = "Assets/BaseAssets/Troops/Tier 6 - Final Prefabs";
 
@@ -459,11 +459,11 @@ public class ToolManagerEditor : EditorWindow
                         BaseMeleePath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseMelee.prefab";
                         BaseRangedPath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseRanged.prefab";
                         BaseRunnerPath = "Assets/BaseAssets/Troops/Tier 2 - Base Type/BaseRunner.prefab";
-                        BaseClassPath = $"Assets/BaseAssets/Troops/Tier 5 - Base Class/CreatedByTPC";
+                        BaseClassPath = $"Assets/BaseAssets/Troops/Tier 5 - Base Class/IgnoreByGit";
                         BlueTemporaryMaterialPath = "Assets/BaseAssets/ToolMaterials/TPCMaterials/TemporaryBlueTroopMaterial.mat";
                         RedTemporaryMaterialPath = "Assets/BaseAssets/ToolMaterials/TPCMaterials/TemporaryRedTroopMaterial.mat";
-                        BlueTroopPath = $"Assets/BaseAssets/Troops/Tier 6 - Final Prefabs/CreatedByTPC";
-                        RedTroopPath = $"Assets/BaseAssets/Troops/Tier 6 - Final Prefabs/CreatedByTPC";
+                        BlueTroopPath = $"Assets/BaseAssets/Troops/Tier 6 - Final Prefabs/IgnoreByGit";
+                        RedTroopPath = $"Assets/BaseAssets/Troops/Tier 6 - Final Prefabs/IgnoreByGit";
 
                         TroopPrefabPath = "Assets/BaseAssets/Troops/Tier 6 - Final Prefabs";
                     }

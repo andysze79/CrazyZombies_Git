@@ -1,6 +1,19 @@
 # Never ignore Asset meta data
 !/**/*.meta
 
+Troops/Tier 1 - Base/IgnoreByGit
+Troops/Tier 2 - Base Type/IgnoreByGit
+Troops/Tier 3 - Animation Exports/IgnoreByGit
+Troops/Tier 4 - Meshes/IgnoreByGit
+Troops/Tier 5 - Base Class/IgnoreByGit
+Troops/Tier 6 - Final Prefabs/IgnoreByGit
+Troops/Tier 7 - Ragdoll Prefabs/IgnoreByGit
+Troops/Animations - Base/IgnoreByGit
+Troops/Animations - Override/IgnoreByGit
+Troops/IgnoreByGit
+Troops/Projectiles/IgnoreByGit
+Troops/Troop Graphics/IgnoreByGit
+
 # Visual Studio cache directory
 .vs/
 

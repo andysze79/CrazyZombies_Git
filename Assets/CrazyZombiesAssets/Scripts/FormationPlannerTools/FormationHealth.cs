@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(FormationTimeLine))]
 public class FormationHealth : MonoBehaviour
 {
     public float m_Health;
     public float m_HealthCurrent;
+    public GameObject m_AttackTrigger;
+
+    [Header("UI")]
+    public Image m_HealthBar;
+
+    [Header("Suicide Settings")]
     public bool m_Suicide;
     public float m_ActiveTime;
     public bool m_Randomized;
+    public int m_StopAtHere = 0;
 
     public bool Suicide { get; set; }
     public List<BaseAssets.AI.AIDataHolder> Troops = new List<BaseAssets.AI.AIDataHolder>();
@@ -33,7 +41,7 @@ public class FormationHealth : MonoBehaviour
     }
 
     public void GetDamage() {
-        if (Index < Troops.Count)
+        if (Index < Troops.Count - m_StopAtHere)
         {            
             Troops[Index].CurrentHealth -= float.PositiveInfinity;
             if (m_Randomized)
@@ -47,22 +55,31 @@ public class FormationHealth : MonoBehaviour
             }
             UpdateHealth();
         }
-        else {
-            Index = 0;
-            Troops.Clear();
-            transform.parent.gameObject.SetActive(false);
-        }
     }
 
     public void UpdateHealth()
     {
-        m_HealthCurrent = FormationTimeLine.GetTroops().Length;
+        --m_HealthCurrent;
+
+        if(m_HealthBar != null)
+        m_HealthBar.fillAmount = m_HealthCurrent / m_Health;
     }
     
     public IEnumerator CheckActiveTime() {
         while (m_HealthCurrent > 0) {
             yield return new WaitForSeconds(m_ActiveTime / m_Health);
             GetDamage();
+        }
+
+        if (true) {
+            // Clean up the squad
+            Index = 0;
+            Troops.Clear();
+
+            if (m_HealthBar != null)
+                m_HealthBar.transform.parent.gameObject.SetActive(false);
+
+            m_AttackTrigger.SetActive(false);
         }
     }
 

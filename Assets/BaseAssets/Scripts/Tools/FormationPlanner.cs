@@ -39,7 +39,7 @@ namespace BaseAssets.Tools
         [Header("Manual Formation Settings")]
         public List<Vector3> manualPositions = new List<Vector3>();
 
-        [Header("Moving Formation Settins")]
+        [Header("Moving Formation Settings")]
         public bool isFormationMoverActive = false;
         public bool loopMovement = false;
         public float initialDelayBeforeMove = 5f;

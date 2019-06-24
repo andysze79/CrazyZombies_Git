@@ -42,7 +42,7 @@ namespace BaseAssets.Tools
         public EndlessTargetAxis endlessTargetAxis = EndlessTargetAxis.X_Axis;
         public enum EndlessTargetAxis { X_Axis, Z_Axis }
         [Tooltip("This is the parent object to keep all waypoints, only Endless spawner requires it")]
-        public Transform endlessWaypointContainer = null;
+        [HideInInspector] public Transform endlessWaypointContainer = null;
         [Tooltip("How many troops do you want to spawn every burst?")]
         public int endlessTroopCountPerBurst = 1;
         [Tooltip("How long do you want to wait between each burst?")]
@@ -61,18 +61,26 @@ namespace BaseAssets.Tools
         public float spawnDelayInitial = 0f;
         [Tooltip("How long do you want to wait between each spawn?")]
         public float spawnDelayPerTroop = 0f;
-        [Tooltip("The size of the target area for endless spawning")]
-        public Vector3 endlessTargetAreaDimensions = new Vector3();
+        
+        [Header("Position")]
         [Tooltip("The position of the target area for endless spawning, rotation is not supported. Change endlessTargetAxis for horizontal/vertical")]
         public Vector3 endlessTargetAreaPosition = new Vector3();
-        [Tooltip("Size of the spawn area for random troop spawning")]
-        public Vector3 spawnAreaDimensions = new Vector3();
+        [Header("Position")]
         [Tooltip("Location of the spawn area for random troop spawning")]
         public Vector3 spawnAreaPosition = new Vector3();
-        [Tooltip("Size of the target area for units to find and attack enemies")]
-        public Vector3 targetAreaDimension = new Vector3();
+        [Header("Position")]
         [Tooltip("Location of the target area for units to find and attack enemies")]
         public Vector3 targetAreaPosition = new Vector3();
+
+        [Header("Dimension")]
+        [Tooltip("The size of the target area for endless spawning")]
+        public Vector3 endlessTargetAreaDimensions = new Vector3();
+        [Header("Dimension")]
+        [Tooltip("Size of the spawn area for random troop spawning")]
+        public Vector3 spawnAreaDimensions = new Vector3();
+        [Header("Dimension")]
+        [Tooltip("Size of the target area for units to find and attack enemies")]
+        public Vector3 targetAreaDimension = new Vector3();
 
         [Tooltip("Drag all spawnLocations here and tool will take turns spawning troops, NOT COMPATIBLE with endless spawning!!!")]
         public List<GameObject> spawnLocations = new List<GameObject>();
@@ -87,6 +95,13 @@ namespace BaseAssets.Tools
         public bool automateFormationSwitch = false;
         public bool loopAutomation = false;
         public float automatedTime = 0f;
+
+        [Header("Overwrite Movement Settings")]
+        public bool overwriteSpeed = false;
+        public float maxMovementDistance = 10f;
+        public float minMovementDistance = 1f;
+        public float maxSpeed = 10f;
+        public float minSpeed = 1f;
 
         [Header("Timeline Settings")]
         [Tooltip("Setting this will apply the formation to troops. Make sure the number is correct by checking formations list")]
@@ -606,16 +621,10 @@ namespace BaseAssets.Tools
                         spawnTransform.position = GetTargetPositionByPercentage(troop.transform.position.z);
                     }
 
-                    troop.SetupAI(this, spawnTransform);
+                    troop.SetupAI(this, spawnTransform, true, endlessDestroyTime);
                     troop.fightingMode = AIDataHolder.FightingMode.Aggressive;
 
                     SetTroopInvulnerability(troop);
-
-                    if (endlessDestroyTime != 0f)
-                    {
-                        Destroy(troop.gameObject, endlessDestroyTime);
-                        Destroy(spawnTransform.gameObject, endlessDestroyTime);
-                    }
                 }
 
                 ActivateNextSpawnLocation();

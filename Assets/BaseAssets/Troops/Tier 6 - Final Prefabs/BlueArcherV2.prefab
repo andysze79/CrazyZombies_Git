@@ -1198,21 +1198,6 @@ PrefabInstance:
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 8214641209310343286}
-    - target: {fileID: 3558730034720676479, guid: fb042006c74d4f043b0ae6884b621b8f,
-        type: 3}
-      propertyPath: m_Speed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3558730034720676479, guid: fb042006c74d4f043b0ae6884b621b8f,
-        type: 3}
-      propertyPath: m_AngularSpeed
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 3558730034720676479, guid: fb042006c74d4f043b0ae6884b621b8f,
-        type: 3}
-      propertyPath: m_Acceleration
-      value: 240
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb042006c74d4f043b0ae6884b621b8f, type: 3}
 --- !u!114 &8034656292890375736 stripped

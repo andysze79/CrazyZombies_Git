@@ -396,6 +396,8 @@ namespace BaseAssets.AI
 
         public static bool HasReachedDestination(NavMeshAgent _agent)
         {
+            if (!_agent.enabled) return false;
+
             if (!_agent.pathPending)
             {
                 if (_agent.remainingDistance <= _agent.stoppingDistance)
@@ -408,6 +410,28 @@ namespace BaseAssets.AI
             }
 
             return false;
+        }
+
+        public static float GetAgentSpeedBasedOnDistance(AIDataHolder _data, float _distance)
+        {
+            float agentSpeed = 0f;
+
+            if (_distance > _data.maxMovementDistance)
+            {
+                agentSpeed = _data.maxSpeed;
+            }
+            else if (_distance < _data.minMovementDistance)
+            {
+                agentSpeed = _data.minSpeed;
+            }
+            else
+            {
+                var distRatio = (_distance - _data.minMovementDistance) / (_data.maxMovementDistance - _data.minMovementDistance);
+                var diffSpeed = _data.maxSpeed - _data.minSpeed;
+                agentSpeed = (distRatio * diffSpeed) + _data.minSpeed;
+            }
+
+            return agentSpeed;
         }
 
         // ANIMATOR & ANIMATION RELATED
@@ -433,6 +457,36 @@ namespace BaseAssets.AI
             if (_animator == null) return;
 
             _animator.SetFloat(_parameterName, _value);
+        }
+
+        // GUI RELATED
+        public static void DrawString(string _text, Vector3 _worldPos, Color? _colour = null)
+        {
+            UnityEditor.Handles.BeginGUI();
+
+            var restoreColor = GUI.color;
+
+            if (_colour.HasValue) GUI.color = _colour.Value;
+            var view = UnityEditor.SceneView.currentDrawingSceneView;
+            Vector3 screenPos = view.camera.WorldToScreenPoint(_worldPos);
+
+            if (screenPos.y < 0 || screenPos.y > Screen.height || screenPos.x < 0 || screenPos.x > Screen.width || screenPos.z < 0)
+            {
+                GUI.color = restoreColor;
+                UnityEditor.Handles.EndGUI();
+                return;
+            }
+
+            Vector2 size = GUI.skin.label.CalcSize(new GUIContent(_text));
+            GUI.Label(new Rect(screenPos.x - (size.x / 2), -screenPos.y + view.position.height + 4, size.x, size.y), _text);
+            GUI.color = restoreColor;
+            UnityEditor.Handles.EndGUI();
+        }
+
+        // MISC
+        public static float Remap(float value, float from1, float to1, float from2, float to2)
+        {
+            return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
         }
     }
 }

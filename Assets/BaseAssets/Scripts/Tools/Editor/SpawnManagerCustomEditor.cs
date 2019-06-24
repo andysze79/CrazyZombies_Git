@@ -18,7 +18,7 @@ namespace BaseAssets.Tools.InternalEditor
             ShowOnEnum("spawnType", "SpawnWithTimer", "spawnDelayPerTroop");
             ShowOnEnum("spawnType", "SpawnWithTimer", "spawnDelayInitial");
 
-            ShowOnEnum("spawnType", "SpawnEndless", "endlessWaypointContainer");
+            //ShowOnEnum("spawnType", "SpawnEndless", "endlessWaypointContainer");
             ShowOnEnum("spawnType", "SpawnEndless", "endlessTroopCountPerBurst");
             ShowOnEnum("spawnType", "SpawnEndless", "endlessBurstDelay");
             ShowOnEnum("spawnType", "SpawnEndless", "endlessBurstDelayInitial");
