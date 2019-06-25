@@ -18,6 +18,7 @@ public class FormationHealth : MonoBehaviour
     public float m_ActiveTime;
     public bool m_Randomized;
     public int m_StopAtHere = 0;
+    public bool m_BodiesFollowFormation = true;
 
     public bool Suicide { get; set; }
     public List<BaseAssets.AI.AIDataHolder> Troops = new List<BaseAssets.AI.AIDataHolder>();
@@ -44,6 +45,17 @@ public class FormationHealth : MonoBehaviour
         if (Index < Troops.Count - m_StopAtHere)
         {            
             Troops[Index].CurrentHealth -= float.PositiveInfinity;
+
+            // Dead troop won't move with squad
+            if (m_BodiesFollowFormation)
+            {
+                if (Troops[Index].GetComponent<ClickVFXReceiver>() != null)
+                {
+                    Troops[Index].GetComponent<ClickVFXReceiver>().TurnOffVFX();
+                }
+                Troops[Index].transform.SetParent(transform.root);
+            }
+
             if (m_Randomized)
             {
                 Troops.Remove(Troops[Index]);
@@ -71,7 +83,7 @@ public class FormationHealth : MonoBehaviour
             GetDamage();
         }
 
-        if (true) {
+        if (m_AttackTrigger != null) {
             // Clean up the squad
             Index = 0;
             Troops.Clear();

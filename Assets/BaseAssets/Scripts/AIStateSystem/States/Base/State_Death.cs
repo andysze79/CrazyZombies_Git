@@ -20,6 +20,9 @@ namespace BaseAssets.AI
             AIStateHelperMethods.PlayAnimation(Reference.animator, "Death");
             StartCoroutine(SinkDelay());
             Reference.animator.gameObject.layer = 0;
+
+
+            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         }
 
         public override void UpdateState()

@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1955027066289572432
 Transform:
   m_ObjectHideFlags: 0
@@ -89,10 +89,9 @@ MonoBehaviour:
   punctualIntensity: 600
   areaIntensity: 200
   enableSpotReflector: 0
-  luxAtDistance: 1
   m_InnerSpotPercent: 0
   lightDimmer: 1
-  m_VolumetricDimmer: 1
+  volumetricDimmer: 1
   lightUnit: 0
   sunDiskSize: 1
   sunHaloSize: 0.1
@@ -109,7 +108,6 @@ MonoBehaviour:
   maxSmoothness: 0.99
   applyRangeAttenuation: 1
   useOldInspector: 0
-  useVolumetric: 1
   featuresFoldout: 1
   showAdditionalSettings: 0
   displayLightIntensity: 600
@@ -119,7 +117,6 @@ MonoBehaviour:
   shadowSoftness: 0.5
   blockerSampleCount: 24
   filterSampleCount: 16
-  minFilterSize: 0.00001
 --- !u!114 &1352584547176718452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19205,10 +19202,9 @@ MonoBehaviour:
   punctualIntensity: 600
   areaIntensity: 200
   enableSpotReflector: 0
-  luxAtDistance: 1
   m_InnerSpotPercent: 0
   lightDimmer: 1
-  m_VolumetricDimmer: 1
+  volumetricDimmer: 1
   lightUnit: 0
   sunDiskSize: 1
   sunHaloSize: 0.1
@@ -19225,7 +19221,6 @@ MonoBehaviour:
   maxSmoothness: 0.99
   applyRangeAttenuation: 1
   useOldInspector: 0
-  useVolumetric: 1
   featuresFoldout: 1
   showAdditionalSettings: 0
   displayLightIntensity: 100
@@ -19235,7 +19230,6 @@ MonoBehaviour:
   shadowSoftness: 0.5
   blockerSampleCount: 24
   filterSampleCount: 16
-  minFilterSize: 0.00001
 --- !u!114 &5766152463297090432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19248,4 +19242,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605a456cfc02f6b499a64717539a27e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit: {fileID: 1373873258365392, guid: cd5def2bb4f6b4e4ab15ba0b6f35b29d, type: 3}
+  hit: {fileID: 1373873258365392, guid: f930e1bc57db53c49807d03f8bdb059c, type: 3}

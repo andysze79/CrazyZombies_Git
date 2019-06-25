@@ -9,4 +9,8 @@ public class ClickVFXReceiver : MonoBehaviour
     public void TurnOnVFX() {
         m_VFX.SetActive(true);
     }
+    public void TurnOffVFX()
+    {
+        m_VFX.SetActive(false);
+    }
 }

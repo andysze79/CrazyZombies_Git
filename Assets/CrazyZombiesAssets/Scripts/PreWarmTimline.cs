@@ -9,9 +9,11 @@ public class PreWarmTimline : MonoBehaviour
 
     public ObjectCounter m_ObjectCounter;
 
+    public int m_PrewarmAmount = 50;
+
     public void Awake()
     {
-        
+        StartCoroutine(WaitForPrewarm());
     }
 
     public void Update()
@@ -21,6 +23,10 @@ public class PreWarmTimline : MonoBehaviour
         }
     }
 
-    //public IEnumerator W
+    public IEnumerator WaitForPrewarm() {
+        yield return new WaitUntil(() => m_ObjectCounter.GetAmount() > m_PrewarmAmount);
+
+        m_TimelinePlayer.Play();               
+    }
 
 }
