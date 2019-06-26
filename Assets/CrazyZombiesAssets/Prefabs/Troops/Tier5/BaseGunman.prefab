@@ -177,17 +177,17 @@ PrefabInstance:
     - target: {fileID: 1894154721639782636, guid: b3b543e29fd1d50438e489edb0668b69,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 6
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1894154721639782636, guid: b3b543e29fd1d50438e489edb0668b69,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 6
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1894154721639782636, guid: b3b543e29fd1d50438e489edb0668b69,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 6
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1894154721639782641, guid: b3b543e29fd1d50438e489edb0668b69,
         type: 3}
@@ -199,6 +199,31 @@ PrefabInstance:
         type: 3}
       propertyPath: troopType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894154721639782641, guid: b3b543e29fd1d50438e489edb0668b69,
+        type: 3}
+      propertyPath: projectileSpawnOffset.y
+      value: 4.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894154721639782641, guid: b3b543e29fd1d50438e489edb0668b69,
+        type: 3}
+      propertyPath: projectileSpawnOffset.z
+      value: 6.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894154721639782641, guid: b3b543e29fd1d50438e489edb0668b69,
+        type: 3}
+      propertyPath: projectileTargetOffsetY
+      value: 4.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894154721639782641, guid: b3b543e29fd1d50438e489edb0668b69,
+        type: 3}
+      propertyPath: projectileTrajectoryHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894154721639782641, guid: b3b543e29fd1d50438e489edb0668b69,
+        type: 3}
+      propertyPath: projectileSpeedInSeconds
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3b543e29fd1d50438e489edb0668b69, type: 3}

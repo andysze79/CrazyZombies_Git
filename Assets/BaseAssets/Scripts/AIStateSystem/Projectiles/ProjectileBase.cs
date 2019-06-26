@@ -90,7 +90,7 @@ namespace BaseAssets.AI.Projectile
             if (ToolManagerDataHolder.ProjectileDebugRay) Debug.DrawRay(transform.position, transform.forward, Color.cyan);
 
             RaycastHit hit = new RaycastHit();
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 0.1f, damagable))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 4f, damagable))
             {
                 if (projectileMover) projectileMover.PlayOnHit(hit);
                 projectileCaster.Attack.DealDamage(null);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 0.32332358, g: 0.4691064, b: 0.77551025, a: 1}
+  m_IndirectSpecularColor: {r: 0.056452315, g: 0.077566676, b: 0.12088631, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -111,7 +111,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: e850b63055acb96459847b289096b670, type: 2}
 --- !u!1001 &626763907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -178,6 +178,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098501275214846751, guid: fe5985ce800a87f4aa462b779f93405e,
+        type: 3}
+      propertyPath: origin
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098501275214846751, guid: fe5985ce800a87f4aa462b779f93405e,
+        type: 3}
+      propertyPath: Damage
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe5985ce800a87f4aa462b779f93405e, type: 3}
@@ -552,15 +562,77 @@ PrefabInstance:
     - target: {fileID: 8430754596776827922, guid: 0aed04ec27ee3634a99d55fa167e5c94,
         type: 3}
       propertyPath: MaximumHealth
-      value: 99999
+      value: 999
       objectReference: {fileID: 0}
     - target: {fileID: 8430754596776827922, guid: 0aed04ec27ee3634a99d55fa167e5c94,
         type: 3}
       propertyPath: CurrentHealth
-      value: 1e+9
+      value: 999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aed04ec27ee3634a99d55fa167e5c94, type: 3}
+--- !u!1 &1906619820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1906619822}
+  - component: {fileID: 1906619821}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1906619821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906619820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cccba2a025452b4b9704f7d89dfc927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDebugActive: 0
+  Rock:
+    TroopType: 0
+    Strength: 1
+    Weakness: 1
+  Paper:
+    TroopType: 1
+    Strength: 1
+    Weakness: 1
+  Scissor:
+    TroopType: 2
+    Strength: 1
+    Weakness: 1
+  infantrySprite: {fileID: 0}
+  archerSprite: {fileID: 0}
+  cavalrySprite: {fileID: 0}
+  rockImage: {fileID: 0}
+  paperImage: {fileID: 0}
+  scissorImage: {fileID: 0}
+--- !u!4 &1906619822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906619820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.8653355, y: 5.2706637, z: -14.832691}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2011204166
 GameObject:
   m_ObjectHideFlags: 0

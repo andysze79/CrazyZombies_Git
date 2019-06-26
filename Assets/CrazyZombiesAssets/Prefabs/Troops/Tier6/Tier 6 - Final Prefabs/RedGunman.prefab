@@ -102,33 +102,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
-      propertyPath: projectileTrajectoryHeight
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
-        type: 3}
-      propertyPath: projectileTargetOffsetY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
-        type: 3}
-      propertyPath: projectileSpawnOffset.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
-        type: 3}
-      propertyPath: projectileSpawnOffset.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
-        type: 3}
       propertyPath: Damage
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
       propertyPath: projectileSpeedInSeconds
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780556, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}

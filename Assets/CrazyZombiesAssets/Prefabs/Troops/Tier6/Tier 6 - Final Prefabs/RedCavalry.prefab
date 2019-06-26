@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2550588275902025991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5355042633005244875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78561cc651ad8b24db4066c50d994fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_VFX: {fileID: 7665442749723276192}
 --- !u!114 &1673827370228603616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26,6 +13,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DelayForReset: 3
+--- !u!114 &2550588275902025991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355042633005244875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78561cc651ad8b24db4066c50d994fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VFX: {fileID: 7665442749723276192}
+--- !u!114 &5153407362659825600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355042633005244875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d36c1ebde66fa4f8f54a74ed2919ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AIStateManager: {fileID: 0}
 --- !u!1001 &3305577351551671143
 PrefabInstance:
   m_ObjectHideFlags: 0
