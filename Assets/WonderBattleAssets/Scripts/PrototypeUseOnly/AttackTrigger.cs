@@ -56,7 +56,7 @@ public class AttackTrigger : MonoBehaviour
                         VFX = m_AttackVFXs[i];
                         VFX.transform.SetParent(other.transform);
                         VFX.transform.localPosition = Vector3.zero;
-                        VFX.transform.localScale = Vector3.one;
+                        VFX.transform.localScale = m_AttackVFX.transform.localScale;
                         VFX.SetActive(true);
                     }
                 }

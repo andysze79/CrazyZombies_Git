@@ -6,8 +6,15 @@ using BaseAssets.AI;
 
 public class FightModeController : MonoBehaviour
 {
+    [Header("For ready animation")]
+    public bool m_PlayReadyBeforeFight = false;
+    public float m_TimeToReady = 1;
+    public bool m_Offset = true;
+
+    [Header("For fight mode")]
     public float m_TimeToAggressive = 3;
     public GameObject m_SpawnedTroopsContainer;
+
 
     public void OnEnable()
     {
@@ -15,8 +22,23 @@ public class FightModeController : MonoBehaviour
         StartCoroutine(Delay());
     }
 
-    public IEnumerator Delay() {
-        yield return new WaitForSeconds(m_TimeToAggressive);
+    public IEnumerator Delay()
+    {
+        if (m_PlayReadyBeforeFight) {
+            yield return new WaitForSeconds(m_TimeToReady);
+
+            var troops = m_SpawnedTroopsContainer.GetComponentsInChildren<Animator>();
+
+            for (int i = 0; i < troops.Length; i++)
+            {
+                troops[i].GetComponent<Animator>().SetTrigger("Ready");
+
+                if(m_Offset)
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        yield return new WaitForSeconds(m_TimeToAggressive - m_TimeToReady);
 
         GetComponent<FormationPlanner>().fightingMode = BaseAssets.AI.AIDataHolder.FightingMode.Aggressive;
 
