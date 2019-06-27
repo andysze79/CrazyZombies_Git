@@ -1,11 +1,10 @@
-﻿// TODO: Add hard cap to endless spawn
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
 using BaseAssets.AI;
 using BaseAssets.Debugger;
+using BaseAssets.Events;
 
 namespace BaseAssets.Tools
 {
@@ -98,10 +97,10 @@ namespace BaseAssets.Tools
 
         [Header("Overwrite Movement Settings")]
         public bool overwriteSpeed = false;
-        public float maxMovementDistance = 10f;
-        public float minMovementDistance = 1f;
-        public float maxSpeed = 10f;
-        public float minSpeed = 1f;
+        public float maxAccelerationDistance = 10f;
+        public float minDecelarationDistance = 1f;
+        public float maxPossibleSpeed = 10f;
+        public float minPossibleSpeed = 1f;
 
         [Header("Timeline Settings")]
         [Tooltip("Setting this will apply the formation to troops. Make sure the number is correct by checking formations list")]
@@ -316,6 +315,8 @@ namespace BaseAssets.Tools
 
                 yield return new WaitForSeconds(0.5f);
             }
+
+            if(EventHandler.onFormationSwitch != null) EventHandler.onFormationSwitch(this, nextFormationPlanner);
         }
 
         public void SwitchFormation(int _formationIndex)
@@ -363,6 +364,8 @@ namespace BaseAssets.Tools
                     SetTroopInvulnerability(troop);
                 }
             }
+
+            if(EventHandler.onFormationSwitch != null) EventHandler.onFormationSwitch(this, formations[_formationIndex]);
         }
 
         public void SwitchToNextFormation()
@@ -417,6 +420,8 @@ namespace BaseAssets.Tools
                     SetTroopInvulnerability(troop);
                 }
             }
+
+            if(EventHandler.onFormationSwitch != null) EventHandler.onFormationSwitch(this, formations[formationIndex]);
         }
         // FORMATION SWITCH =============================================================================================================================================
 
@@ -461,7 +466,11 @@ namespace BaseAssets.Tools
 
                 SetTroopInvulnerability(troop);
                 ActivateNextSpawnLocation();
+
+                if(EventHandler.onTroopSpawn != null) EventHandler.onTroopSpawn(troop);
             }
+
+            if(EventHandler.onAllTroopsSpawned != null) EventHandler.onAllTroopsSpawned(this);
         }
 
         private IEnumerator SpawnInBurst()
@@ -510,6 +519,8 @@ namespace BaseAssets.Tools
 
                     SetTroopInvulnerability(troop);
 
+                    if(EventHandler.onTroopSpawn != null) EventHandler.onTroopSpawn(troop);
+
                     spawnIndex++;
 
                     if (i == burstCount - 1 && k == spawnPerBurst - 1)
@@ -529,6 +540,8 @@ namespace BaseAssets.Tools
 
                             SetTroopInvulnerability(troop);
 
+                            if(EventHandler.onTroopSpawn != null) EventHandler.onTroopSpawn(troop);
+
                             spawnIndex++;
                         }
                     }
@@ -537,6 +550,8 @@ namespace BaseAssets.Tools
                 yield return new WaitForSeconds(burstDelay);
                 ActivateNextSpawnLocation();
             }
+
+            if(EventHandler.onAllTroopsSpawned != null) EventHandler.onAllTroopsSpawned(this);
         }
 
         private IEnumerator SpawnTroopsWithTimer()
@@ -581,8 +596,12 @@ namespace BaseAssets.Tools
                 SetTroopInvulnerability(troop);
                 ActivateNextSpawnLocation();
 
+                if(EventHandler.onTroopSpawn != null) EventHandler.onTroopSpawn(troop);
+
                 yield return new WaitForSeconds(spawnDelayPerTroop);
             }
+
+            if(EventHandler.onAllTroopsSpawned != null) EventHandler.onAllTroopsSpawned(this);
         }
 
         private IEnumerator SpawnInBurstEndless()
@@ -625,6 +644,8 @@ namespace BaseAssets.Tools
                     troop.fightingMode = AIDataHolder.FightingMode.Aggressive;
 
                     SetTroopInvulnerability(troop);
+                    
+                    if(EventHandler.onTroopSpawn != null) EventHandler.onTroopSpawn(troop);
                 }
 
                 ActivateNextSpawnLocation();
@@ -635,6 +656,8 @@ namespace BaseAssets.Tools
             {
                 DebugManager.EndlessSpawnError(gameObject);
             }
+
+            if(EventHandler.onAllTroopsSpawned != null) EventHandler.onAllTroopsSpawned(this);
         }
         // SPAWN TYPES ==================================================================================================================================================
 

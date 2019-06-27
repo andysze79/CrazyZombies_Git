@@ -15,6 +15,11 @@ namespace BaseAssets.AI.Projectile
         protected Vector3 targetPosition = Vector3.zero;
         protected Vector3 startPosition = Vector3.zero;
 
+        protected bool velocityBasedSpeed = false;
+        protected float distanceToTarget = 0f;
+        protected float projectileVelocity = 1f;
+        protected float speedMultiplier = 1f;
+
         private bool canDamage = true;
         private AIDataHolder projectileCaster = null;
         private AIDataHolder projectileReceiver = null;
@@ -26,6 +31,12 @@ namespace BaseAssets.AI.Projectile
         {
             startPosition = transform.position;
             projectileMover = GetComponentInChildren<ProjectileMover>();
+
+            if(velocityBasedSpeed)
+            {
+                distanceToTarget = Vector3.Distance(transform.position, new Vector3(targetTrajectory.transform.position.x, targetTrajectory.transform.position.y + projectileTargetOffsetY, targetTrajectory.transform.position.z));
+                speedMultiplier = projectileVelocity / distanceToTarget;
+            }
         }
 
         protected Vector3 Curve(Vector3 initialPos, Vector3 targetPos, float t)
@@ -90,7 +101,7 @@ namespace BaseAssets.AI.Projectile
             if (ToolManagerDataHolder.ProjectileDebugRay) Debug.DrawRay(transform.position, transform.forward, Color.cyan);
 
             RaycastHit hit = new RaycastHit();
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 4f, damagable))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, damagable))
             {
                 if (projectileMover) projectileMover.PlayOnHit(hit);
                 projectileCaster.Attack.DealDamage(null);
@@ -116,6 +127,12 @@ namespace BaseAssets.AI.Projectile
         {
             targetPosition = _targetPosition;
             homingProjectile = false;
+        }
+
+        public void SetProjectileMoveSetting(bool _velocityBasedSpeed, float _projectileVelocity)
+        {
+            velocityBasedSpeed = _velocityBasedSpeed;
+            projectileVelocity = _projectileVelocity;
         }
 
         public void SetProjectileSpeedInSeconds(float _projectileSpeedInSeconds)

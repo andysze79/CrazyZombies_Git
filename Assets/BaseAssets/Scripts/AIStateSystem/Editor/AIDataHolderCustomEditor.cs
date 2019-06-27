@@ -17,21 +17,25 @@ namespace BaseAssets.AI.InternalEditor
             ShowOnEnum("troopType", "Archer", "projectileTargetOffsetY");
             ShowOnEnum("troopType", "Archer", "arrowPrefab");
             ShowOnEnum("troopType", "Archer", "projectileSpawnOffset");
+            ShowOnEnum("troopType", "Archer", "velocityBasedSpeed");
+            ShowOnEnum("troopType", "Archer", "projectileVelocity");
+
 
             ShowOnEnum("showVariables", "Health", "MaximumHealth");
             ShowOnEnum("showVariables", "Health", "CurrentHealth");
 
             ShowOnEnum("showVariables", "Attack", "Damage");
+            ShowOnEnum("showVariables", "Attack", "AttackSpeed");
             ShowOnEnum("showVariables", "Attack", "AttackDistance");
             ShowOnEnum("showVariables", "Attack", "SearchRadius");
 
             ShowOnEnum("showVariables", "Death", "SinkDelay");
             ShowOnEnum("showVariables", "Death", "SinkSpeed");
 
-            ShowOnEnum("showVariables", "Movement", "maxMovementDistance");
-            ShowOnEnum("showVariables", "Movement", "minMovementDistance");
-            ShowOnEnum("showVariables", "Movement", "maxSpeed");
-            ShowOnEnum("showVariables", "Movement", "minSpeed");
+            ShowOnEnum("showVariables", "Movement", "maxAccelerationDistance");
+            ShowOnEnum("showVariables", "Movement", "minDecelarationDistance");
+            ShowOnEnum("showVariables", "Movement", "maxPossibleSpeed");
+            ShowOnEnum("showVariables", "Movement", "minPossibleSpeed");
         }
 
         public override void OnInspectorGUI()

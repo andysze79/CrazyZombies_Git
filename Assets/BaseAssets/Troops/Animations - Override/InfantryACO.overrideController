@@ -9,15 +9,17 @@ AnimatorOverrideController:
   m_Name: InfantryACO
   m_Controller: {fileID: 9100000, guid: 1f0ed23ebd898f643ac0c2e06a4cadfb, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 8283552d782acd748881071f7b219fd9, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 8d672e25dcfd47643af7d5ae2e5967ec, type: 3}
-  - m_OriginalClip: {fileID: 7400000, guid: 67651417412a56e49b536fda88c85902, type: 2}
-    m_OverrideClip: {fileID: 7400002, guid: 8d672e25dcfd47643af7d5ae2e5967ec, type: 3}
   - m_OriginalClip: {fileID: 7400000, guid: 3ede66af8f4d2e94cbb5250a5ec82825, type: 2}
-    m_OverrideClip: {fileID: 7400002, guid: 8d672e25dcfd47643af7d5ae2e5967ec, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: d829a619bd0c9934d9732705d42013e9, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 67651417412a56e49b536fda88c85902, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c527bafc7a5aa0a4b88a8344cc77eb22, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 8283552d782acd748881071f7b219fd9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7f4401bbf8c1d144c80ce9ccb68423ac, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 857fb73b743b9804886a21545161ab54, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 48a388e696e985949978bd9966b4ac44, type: 3}
   - m_OriginalClip: {fileID: 7400000, guid: dbf820c9c350bc44ba4356eb9e1b9b51, type: 2}
-    m_OverrideClip: {fileID: 7400008, guid: 8d672e25dcfd47643af7d5ae2e5967ec, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 05da3df23dbe2114faf881d7e9401d84, type: 3}
   - m_OriginalClip: {fileID: 7400000, guid: af05739a52b464a4e8bf0ac09a2d8d22, type: 2}
-    m_OverrideClip: {fileID: 7400004, guid: 8d672e25dcfd47643af7d5ae2e5967ec, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 04d36744db1226a4690e3e576ac009c2, type: 3}
   - m_OriginalClip: {fileID: 7400000, guid: 258c088c09b76f140a378851dc85e0ee, type: 2}
-    m_OverrideClip: {fileID: 7400006, guid: 8d672e25dcfd47643af7d5ae2e5967ec, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: e5270e1e015743540ad82b848393d931, type: 3}

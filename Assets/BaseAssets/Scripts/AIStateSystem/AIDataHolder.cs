@@ -27,14 +27,15 @@ namespace BaseAssets.AI
         public float MaximumHealth = 100f;
         public float CurrentHealth = 100f;
         public float Damage = 10f;
+        public float AttackSpeed = 1f;
         public float AttackDistance = 40f;
         public float SearchRadius = 10f;
         public float SinkDelay = 2f;
         public float SinkSpeed = 1f;
-        public float maxMovementDistance = 10f;
-        public float minMovementDistance = 1f;
-        public float maxSpeed = 10f;
-        public float minSpeed = 1f;
+        public float maxAccelerationDistance = 10f;
+        public float minDecelarationDistance = 1f;
+        public float maxPossibleSpeed = 10f;
+        public float minPossibleSpeed = 1f;
         public Transform origin = null;
         public Transform currentMoveTo = null;
         public AIDataHolder enemy = null;
@@ -42,11 +43,16 @@ namespace BaseAssets.AI
 
         [Header("Archer Class Settings")]
         public bool homingProjectile = true;
+        public bool velocityBasedSpeed = false;
+        public float projectileVelocity = 1f;
         public float projectileSpeedInSeconds = 1f;
         public float projectileTrajectoryHeight = 1f;
         public float projectileTargetOffsetY = 0.5f;
         public GameObject arrowPrefab = null;
         public Vector3 projectileSpawnOffset = new Vector3();
+
+        [Header("Misc Settings")]
+        public bool useSetDestination = false;
 
         [HideInInspector] public Vector3 searchPosition = new Vector3();
         private AIStateManager Owner = null;
@@ -72,7 +78,7 @@ namespace BaseAssets.AI
         {
             if(Spawner && Spawner.overwriteSpeed)
             {
-                OverwriteSpeed(Spawner.maxMovementDistance, Spawner.minMovementDistance, Spawner.maxSpeed, Spawner.minSpeed);
+                OverwriteSpeed(Spawner.maxAccelerationDistance, Spawner.minDecelarationDistance, Spawner.maxPossibleSpeed, Spawner.minPossibleSpeed);
             }    
         }
 
@@ -111,10 +117,10 @@ namespace BaseAssets.AI
 
         public void OverwriteSpeed(float _maxMovementDistance, float _minMovementDistance, float _maxSpeed, float _minSpeed)
         {
-            maxMovementDistance = _maxMovementDistance;
-            minMovementDistance = _minMovementDistance;
-            maxSpeed = _maxSpeed;
-            minSpeed = _minSpeed;
+            maxAccelerationDistance = _maxMovementDistance;
+            minDecelarationDistance = _minMovementDistance;
+            maxPossibleSpeed = _maxSpeed;
+            minPossibleSpeed = _minSpeed;
         }
 
         private void OnDrawGizmos()

@@ -26,7 +26,7 @@ namespace BaseAssets.AI.Projectile
 
         private void MoveArrowAlongTheCurve()
         {
-            timer += Time.deltaTime;
+            timer += Time.deltaTime * speedMultiplier;
 
             if (homingProjectile)
             {
@@ -45,11 +45,24 @@ namespace BaseAssets.AI.Projectile
                 {
                     ParticleSystem.Particle[] particles = new ParticleSystem.Particle[10];
                     int count = particleChild.GetParticles(particles);
-                    for (int i = 0; i < count; i++)
+
+                    if(homingProjectile)
                     {
-                        particles[i].position = Vector3.Lerp(transform.position, Curve(startPosition, new Vector3(targetTrajectory.transform.position.x, targetTrajectory.transform.position.y + projectileTargetOffsetY, targetTrajectory.transform.position.z), timer), timer / projectileSpeedInSeconds);
-                        particles[i].rotation3D = transform.rotation.eulerAngles;
+                        for (int i = 0; i < count; i++)
+                        {
+                            particles[i].position = Vector3.Lerp(transform.position, Curve(startPosition, new Vector3(targetTrajectory.transform.position.x, targetTrajectory.transform.position.y + projectileTargetOffsetY, targetTrajectory.transform.position.z), timer), timer / projectileSpeedInSeconds);
+                            particles[i].rotation3D = transform.rotation.eulerAngles;
+                        }
                     }
+                    else
+                    {
+                        for (int i = 0; i < count; i++)
+                        {
+                            particles[i].position = Vector3.Lerp(transform.position, Curve(startPosition, new Vector3(targetPosition.x, targetPosition.y + projectileTargetOffsetY, targetPosition.z), timer), timer / projectileSpeedInSeconds);
+                            particles[i].rotation3D = transform.rotation.eulerAngles;
+                        }
+                    }
+
                     particleChild.SetParticles(particles);
                 }
             }

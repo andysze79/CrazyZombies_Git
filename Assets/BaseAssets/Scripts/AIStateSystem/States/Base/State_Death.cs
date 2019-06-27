@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using BaseAssets.Events;
 
 namespace BaseAssets.AI
 {
@@ -16,13 +17,13 @@ namespace BaseAssets.AI
         public override void EnterState()
         {
             if (Reference.agent && Reference.agent.enabled) Reference.agent.isStopped = true;
+            Reference.agent.enabled = false;
             AIStateHelperMethods.RemoveFromAttackerList(Data);
             AIStateHelperMethods.PlayAnimation(Reference.animator, "Death");
             StartCoroutine(SinkDelay());
             Reference.animator.gameObject.layer = 0;
 
-
-            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            if(EventHandler.onTroopDie != null) EventHandler.onTroopDie(Data);
         }
 
         public override void UpdateState()

@@ -59,7 +59,10 @@ namespace BaseAssets.AI
                 Data.currentMoveTo = Data.origin;
                 Data.currentMoveTo.position = new Vector3(Data.currentMoveTo.position.x, transform.position.y, Data.currentMoveTo.position.z);
 
-                AIStateHelperMethods.SetAgentPath(transform.position, Data.currentMoveTo.position, Reference.agent);
+                if (Data.useSetDestination)
+                    Reference.agent.SetDestination(Data.currentMoveTo.position);
+                else
+                    AIStateHelperMethods.SetAgentPath(transform.position, Data.currentMoveTo.position, Reference.agent);
                 Owner.ChangeState(AIStateKeeper.States.Move);
                 return;
             }
@@ -92,7 +95,10 @@ namespace BaseAssets.AI
                 Data.currentMoveTo = Data.origin;
                 Data.currentMoveTo.position = new Vector3(Data.currentMoveTo.position.x, transform.position.y, Data.currentMoveTo.position.z);
 
-                AIStateHelperMethods.SetAgentPath(transform.position, Data.currentMoveTo.position, Reference.agent);
+                if (Data.useSetDestination)
+                    Reference.agent.SetDestination(Data.currentMoveTo.position);
+                else
+                    AIStateHelperMethods.SetAgentPath(transform.position, Data.currentMoveTo.position, Reference.agent);
                 Owner.ChangeState(AIStateKeeper.States.Move);
             }
         }

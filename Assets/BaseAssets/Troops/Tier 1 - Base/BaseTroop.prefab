@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &8118472034487714404
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -68,8 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d342ab191c2514f90e378ce4a40c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showGizmoOnSelect: 1
-  gizmoInPlayMode: 0
   gizmoColor1: {r: 1, g: 1, b: 1, a: 1}
   gizmoColor2: {r: 1, g: 0, b: 0, a: 1}
   troopType: 3

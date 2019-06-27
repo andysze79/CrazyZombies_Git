@@ -48,6 +48,7 @@ namespace BaseAssets.AI
                 ProjectileBase projectile = Instantiate(Data.arrowPrefab, projectileSpawnPositionOffset, Quaternion.identity).GetComponent<ProjectileBase>();
                 if (!Data.homingProjectile) projectile.SetTarget(Data.enemy.transform.position);
                 if (Data.homingProjectile) projectile.SetTarget(Data.enemy.gameObject);
+                projectile.SetProjectileMoveSetting(Data.velocityBasedSpeed, Data.projectileVelocity);
                 projectile.SetProjectileSpeedInSeconds(Data.projectileSpeedInSeconds);
                 projectile.SetProjectileTrajectoryHeight(Data.projectileTrajectoryHeight);
                 projectile.SetProjectileTargetOffsetY(Data.projectileTargetOffsetY);

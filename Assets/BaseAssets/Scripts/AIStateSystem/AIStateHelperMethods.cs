@@ -60,6 +60,7 @@ namespace BaseAssets.AI
 
                 _data.currentMoveTo = _data.enemy.transform;
                 float distanceToEnemy = Vector3.Distance(_data.currentMoveTo.position, _data.transform.position);
+                _reference.agent.speed = AIStateHelperMethods.GetAgentSpeedBasedOnDistance(_data, distanceToEnemy);
 
                 if (distanceToEnemy <= _data.AttackDistance)
                 {
@@ -71,7 +72,10 @@ namespace BaseAssets.AI
                 }
                 else
                 {
-                    AIStateHelperMethods.SetAgentPath(_data.transform.position, _data.currentMoveTo.position, _reference.agent);
+                    if(_data.useSetDestination)
+                        _reference.agent.SetDestination(_data.currentMoveTo.position);
+                    else
+                        AIStateHelperMethods.SetAgentPath(_data.transform.position, _data.currentMoveTo.position, _reference.agent);
                     _owner.ChangeState(AIStateKeeper.States.Move);
                 }
             }
@@ -387,6 +391,8 @@ namespace BaseAssets.AI
         // NAVMESH RELATED
         public static void SetAgentPath(Vector3 _from, Vector3 _to, NavMeshAgent _agent)
         {
+            if(!_agent.enabled) return;
+            
             NavMeshPath path = new NavMeshPath();
             if (NavMesh.CalculatePath(_from, _to, NavMesh.AllAreas, path))
             {
@@ -416,19 +422,19 @@ namespace BaseAssets.AI
         {
             float agentSpeed = 0f;
 
-            if (_distance > _data.maxMovementDistance)
+            if (_distance > _data.maxAccelerationDistance)
             {
-                agentSpeed = _data.maxSpeed;
+                agentSpeed = _data.maxPossibleSpeed;
             }
-            else if (_distance < _data.minMovementDistance)
+            else if (_distance < _data.minDecelarationDistance)
             {
-                agentSpeed = _data.minSpeed;
+                agentSpeed = _data.minPossibleSpeed;
             }
             else
             {
-                var distRatio = (_distance - _data.minMovementDistance) / (_data.maxMovementDistance - _data.minMovementDistance);
-                var diffSpeed = _data.maxSpeed - _data.minSpeed;
-                agentSpeed = (distRatio * diffSpeed) + _data.minSpeed;
+                var distRatio = (_distance - _data.minDecelarationDistance) / (_data.maxAccelerationDistance - _data.minDecelarationDistance);
+                var diffSpeed = _data.maxPossibleSpeed - _data.minPossibleSpeed;
+                agentSpeed = (distRatio * diffSpeed) + _data.minPossibleSpeed;
             }
 
             return agentSpeed;
@@ -464,10 +470,10 @@ namespace BaseAssets.AI
         {
             UnityEditor.Handles.BeginGUI();
 
-            var restoreColor = GUI.color;
+            Color restoreColor = GUI.color;
 
             if (_colour.HasValue) GUI.color = _colour.Value;
-            var view = UnityEditor.SceneView.currentDrawingSceneView;
+            UnityEditor.SceneView view = UnityEditor.SceneView.currentDrawingSceneView;
             Vector3 screenPos = view.camera.WorldToScreenPoint(_worldPos);
 
             if (screenPos.y < 0 || screenPos.y > Screen.height || screenPos.x < 0 || screenPos.x > Screen.width || screenPos.z < 0)
@@ -478,7 +484,15 @@ namespace BaseAssets.AI
             }
 
             Vector2 size = GUI.skin.label.CalcSize(new GUIContent(_text));
-            GUI.Label(new Rect(screenPos.x - (size.x / 2), -screenPos.y + view.position.height + 4, size.x, size.y), _text);
+
+            GUI.skin.label.fontSize = 12;
+
+            if(screenPos.z > 35)
+            {
+                _text = "";
+            }
+
+            GUI.Label(new Rect(screenPos.x - (size.x / 2), -screenPos.y + view.position.height - 10, size.x, size.y), _text);
             GUI.color = restoreColor;
             UnityEditor.Handles.EndGUI();
         }

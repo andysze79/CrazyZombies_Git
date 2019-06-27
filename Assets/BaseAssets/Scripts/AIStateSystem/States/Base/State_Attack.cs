@@ -28,6 +28,7 @@ namespace BaseAssets.AI
 
         public override void UpdateState()
         {
+            Reference.animator.SetFloat("AttackSpeed", Data.AttackSpeed);
             AIStateHelperMethods.CheckAttackerList(Data);
             CheckIfShouldDie();
         }
@@ -63,6 +64,18 @@ namespace BaseAssets.AI
             else
             {
                 Damage(Data.Damage);
+            }
+        }
+
+        public void DealAOEDamageToSelf(float _damageAmount)
+        {
+            if (Data.IsInvulnerable) return;
+
+            Data.CurrentHealth = Mathf.Clamp(Data.CurrentHealth -= _damageAmount, 0, float.MaxValue);
+
+            if(Data.CurrentHealth > 0f)
+            {
+                Owner.ChangeState(AIStateKeeper.States.Move);
             }
         }
 

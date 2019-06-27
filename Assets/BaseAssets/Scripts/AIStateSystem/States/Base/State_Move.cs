@@ -22,7 +22,10 @@ namespace BaseAssets.AI
 
             if (Data.currentMoveTo)
             {
-                AIStateHelperMethods.SetAgentPath(transform.position, Data.currentMoveTo.position, Reference.agent);
+                if (Data.useSetDestination)
+                    Reference.agent.SetDestination(Data.currentMoveTo.position);
+                else
+                    AIStateHelperMethods.SetAgentPath(transform.position, Data.currentMoveTo.position, Reference.agent);
             }
         }
 
@@ -75,14 +78,15 @@ namespace BaseAssets.AI
             if (Data.origin != null)
             {
                 distanceToOrigin = Vector3.Distance(new Vector3(Data.origin.position.x, transform.position.y, Data.origin.position.z), transform.position);
-
                 Reference.agent.speed = AIStateHelperMethods.GetAgentSpeedBasedOnDistance(Data, distanceToOrigin);
 
                 if (distanceToOrigin > 0.5f && Data.enemy == null)
                 {
                     Data.currentMoveTo = Data.origin;
-                    //AIStateHelperMethods.SetAgentPath(transform.position, Data.currentMoveTo.position, Reference.agent);
-                    Reference.agent.SetDestination(Data.currentMoveTo.position);
+                    if (Data.useSetDestination)
+                        Reference.agent.SetDestination(Data.currentMoveTo.position);
+                    else
+                        AIStateHelperMethods.SetAgentPath(transform.position, Data.currentMoveTo.position, Reference.agent);
                     return;
                 }
             }
@@ -116,25 +120,12 @@ namespace BaseAssets.AI
 
             if (Owner.ActiveState != AIStateKeeper.States.Move) return;
 
-            if(distanceToOrigin > Data.maxMovementDistance)
-            {
-                Gizmos.color = Color.red;
-                AIStateHelperMethods.DrawString(AIStateHelperMethods.Remap(Reference.agent.speed, Data.minSpeed, Data.maxSpeed, 0f, 100f).ToString("0.0"), Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 0f), Color.red);
-                //AIStateHelperMethods.DrawString(distanceToOrigin.ToString("0.0") + "D", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 0f), Color.red);
-                //AIStateHelperMethods.DrawString(Reference.agent.speed.ToString("0.0") + "S", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 1f), Color.red);
-            }
-            else if(distanceToOrigin < Data.minMovementDistance)
-            {
-                Gizmos.color = Color.red;
-                AIStateHelperMethods.DrawString(distanceToOrigin.ToString("0.0") + "D", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 0f), Color.red);
-                AIStateHelperMethods.DrawString(Reference.agent.speed.ToString("0.0") + "S", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 1f), Color.red);
-            }
-            else
-            {
-                Gizmos.color = Color.green;
-                AIStateHelperMethods.DrawString(distanceToOrigin.ToString("0.0") + "D", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 0f), Color.green);
-                AIStateHelperMethods.DrawString(Reference.agent.speed.ToString("0.0") + "S", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 1f), Color.green);
-            }
+            if (Data.currentMoveTo == null) return;
+
+            AIStateHelperMethods.DrawString("+" + AIStateHelperMethods.Remap(Reference.agent.speed, Data.minPossibleSpeed, Data.maxPossibleSpeed, 0f, 100f).ToString("0") + "%", Vector3.Lerp(transform.position, Data.currentMoveTo.transform.position, 0f), 
+                                            Color.Lerp(Color.green, Color.red, AIStateHelperMethods.Remap(Reference.agent.speed, Data.minPossibleSpeed, Data.maxPossibleSpeed, 0f, 1f)));
+
+            Gizmos.color = Color.Lerp(Color.green, Color.red, AIStateHelperMethods.Remap(Reference.agent.speed, Data.minPossibleSpeed, Data.maxPossibleSpeed, 0f, 1f));
 
             if (Reference.agent.path.corners.Length > 0)
             {
