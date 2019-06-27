@@ -11,7 +11,12 @@ public class FormationTimeLine : MonoBehaviour
         Default,Idle,Run,Attack1,Death
     }
 
+    [Header("Animation Settings")]
     public Animation m_CurrentAnimation;
+    public bool m_OffsetAnimation;
+    public bool m_OffsetRandomness;
+
+    [Header("AI Settings")]
     public bool m_EnableAI;
 
     public Animation CurrentAnimation { get; set; }
@@ -34,7 +39,11 @@ public class FormationTimeLine : MonoBehaviour
             if (CurrentAnimation != Animation.Default)
             {
                 Debug.Log(CurrentAnimation.ToString());
-                UpdateAnimation();
+
+                if(!m_OffsetRandomness)
+                    StartCoroutine(UpdateAnimation());
+                else
+                    StartCoroutine(UpdateAnimationRandomly());
             }
         }
         if (EnableAI != m_EnableAI) {
@@ -64,16 +73,44 @@ public class FormationTimeLine : MonoBehaviour
         }
     }
 
-    public void UpdateAnimation() {
+    public IEnumerator UpdateAnimation() {
 
         var troops = GetTroopsCollider();
 
         if (troops != null)
         {
-            foreach (var item in troops)
-            {
-                item.SetTrigger(CurrentAnimation.ToString());
+            for (int i = 0; i < troops.Length; i++)
+            {         
+                troops[i].SetTrigger(CurrentAnimation.ToString());
+                if (m_OffsetAnimation) {
+                    yield return new WaitForEndOfFrame();
+                }
             }
         }
     }
+
+    public IEnumerator UpdateAnimationRandomly() {
+        var troops = GetTroopsCollider();
+        List<Animator> troopsList = new List<Animator>();
+
+        for (int i = 0; i < troops.Length; i++)
+        {
+            troopsList.Add(troops[i]);
+        }
+
+
+        if (troops != null)
+        {
+            for (int i = 0; i < troops.Length; i++)
+            {
+                var Index = Random.Range(0, troopsList.Count);
+                troopsList[Index].SetTrigger(CurrentAnimation.ToString());
+                troopsList.Remove(troopsList[Index]);
+
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+    }
+
 }

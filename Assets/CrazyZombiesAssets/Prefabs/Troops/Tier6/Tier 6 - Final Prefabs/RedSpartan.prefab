@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_VFX:
-  - {fileID: 6600206373025874472}
-  m_Duration: 0.6
+  - {fileID: 6134180164410308733}
+  m_Duration: 0.5
   m_SFXName: 
   m_InstantiateTheVFX: 0
 --- !u!1001 &1341552468833947834
@@ -88,7 +88,7 @@ PrefabInstance:
     - target: {fileID: 5169809696286648519, guid: 5c7298da6ac980b4cab5ef82a859d6ea,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5163868606389464785, guid: 5c7298da6ac980b4cab5ef82a859d6ea,
         type: 3}
@@ -148,22 +148,22 @@ PrefabInstance:
     - target: {fileID: 5163868606389464785, guid: 5c7298da6ac980b4cab5ef82a859d6ea,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.054728
+      value: 2.3599396
       objectReference: {fileID: 0}
     - target: {fileID: 5163868606389464785, guid: 5c7298da6ac980b4cab5ef82a859d6ea,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.054727
+      value: 3.114814
       objectReference: {fileID: 0}
     - target: {fileID: 5163868606389464785, guid: 5c7298da6ac980b4cab5ef82a859d6ea,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 9.119238
+      value: 9.559229
       objectReference: {fileID: 0}
     - target: {fileID: 5006708125574508569, guid: 5c7298da6ac980b4cab5ef82a859d6ea,
         type: 3}
       propertyPath: looping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5006708125574508569, guid: 5c7298da6ac980b4cab5ef82a859d6ea,
         type: 3}
@@ -247,6 +247,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c7298da6ac980b4cab5ef82a859d6ea, type: 3}
+--- !u!1 &6134180164410308733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5169809696286648519, guid: 5c7298da6ac980b4cab5ef82a859d6ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1341552468833947834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2028447483506666223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -341,12 +347,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c7298da6ac980b4cab5ef82a859d6ea, type: 3}
---- !u!1 &6600206373025874472 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5169809696286648519, guid: 5c7298da6ac980b4cab5ef82a859d6ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 2028447483506666223}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4735590777735413335
 PrefabInstance:
   m_ObjectHideFlags: 0

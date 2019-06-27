@@ -215,6 +215,21 @@ PrefabInstance:
       propertyPath: AttackDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4437039588861887103, guid: 6b32675b5fa571542928e6790ffa3958,
+        type: 3}
+      propertyPath: showVariables
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437039588861887103, guid: 6b32675b5fa571542928e6790ffa3958,
+        type: 3}
+      propertyPath: SinkDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437039588861887103, guid: 6b32675b5fa571542928e6790ffa3958,
+        type: 3}
+      propertyPath: SinkSpeed
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4437039588861887102, guid: 6b32675b5fa571542928e6790ffa3958,
         type: 3}
       propertyPath: m_Radius
