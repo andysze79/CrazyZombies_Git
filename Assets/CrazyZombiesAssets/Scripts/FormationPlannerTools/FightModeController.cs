@@ -9,6 +9,8 @@ public class FightModeController : MonoBehaviour
     [Header("For ready animation")]
     public bool m_PlayReadyBeforeFight = false;
     public float m_TimeToReady = 1;
+    [Range(0,20)]
+    public int m_EnableAmountPerFrame = 1;
     public bool m_Offset = true;
 
     [Header("For fight mode")]
@@ -33,7 +35,7 @@ public class FightModeController : MonoBehaviour
             {
                 troops[i].GetComponent<Animator>().SetTrigger("Ready");
 
-                if (m_Offset)
+                if (m_Offset && i % m_EnableAmountPerFrame == 0)
                     yield return new WaitForEndOfFrame();
                     //yield return new WaitForSeconds(0.1f);
             }

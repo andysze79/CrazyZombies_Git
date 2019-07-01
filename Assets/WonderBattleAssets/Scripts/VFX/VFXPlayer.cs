@@ -8,8 +8,18 @@ public class VFXPlayer : MonoBehaviour
     [SerializeField]private float m_Duration;
 
     [SerializeField]private string m_SFXName;
+    [SerializeField] private bool m_StoreUnderThisObj = true;
+
+    [Header("Real-Time generate")]
     [SerializeField]private bool m_InstantiateTheVFX;
+    [SerializeField] private Transform m_GenerateSpot;
     public Coroutine Process { get; set; }
+    public Transform OriginalParent { get; set; }
+
+    public void Awake()
+    {
+        OriginalParent = transform.parent;
+    }
 
     public void OnEnable()
     {
@@ -30,8 +40,8 @@ public class VFXPlayer : MonoBehaviour
     public void GenerateVFX() {
         foreach (var item in m_VFX)
         {
-            var clone = Instantiate(item.gameObject,transform.position, transform.rotation);
-            clone.transform.position = transform.position;
+            var clone = Instantiate(item.gameObject,m_GenerateSpot.position, transform.rotation);
+            //clone.transform.position = transform.position;
             clone.GetComponent<ParticleSystem>().Play();
             Destroy(clone, m_Duration);
         }
@@ -40,6 +50,9 @@ public class VFXPlayer : MonoBehaviour
     public IEnumerator Delayer() {
         foreach (var item in m_VFX)
         {
+            if (!m_StoreUnderThisObj) {
+                item.transform.SetParent(transform.root);
+            }
             item.gameObject.SetActive(true);
         }
 
@@ -47,6 +60,7 @@ public class VFXPlayer : MonoBehaviour
 
         foreach (var item in m_VFX)
         {
+            //item.transform.SetParent(OriginalParent);
             item.gameObject.SetActive(false);
         }
 

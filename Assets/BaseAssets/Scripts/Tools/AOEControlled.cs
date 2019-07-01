@@ -69,8 +69,8 @@ namespace BaseAssets.Tools
             {
                 transform.rotation = Quaternion.LookRotation(startTrajectory - transform.position);
                 canMove = false;
-                reference.agent.enabled = true;
                 data.Attack.DealAOEDamageToSelf(damageToInflict);
+                if(reference.agent && data.CurrentHealth > 0) reference.agent.enabled = true;
 
                 OnKickbackEnd.Invoke();
 

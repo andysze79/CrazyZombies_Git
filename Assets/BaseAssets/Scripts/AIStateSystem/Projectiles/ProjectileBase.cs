@@ -34,8 +34,16 @@ namespace BaseAssets.AI.Projectile
 
             if(velocityBasedSpeed)
             {
-                distanceToTarget = Vector3.Distance(transform.position, new Vector3(targetTrajectory.transform.position.x, targetTrajectory.transform.position.y + projectileTargetOffsetY, targetTrajectory.transform.position.z));
-                speedMultiplier = projectileVelocity / distanceToTarget;
+                if(homingProjectile)
+                {
+                    distanceToTarget = Vector3.Distance(transform.position, new Vector3(targetTrajectory.transform.position.x, targetTrajectory.transform.position.y + projectileTargetOffsetY, targetTrajectory.transform.position.z));
+                    speedMultiplier = projectileVelocity / distanceToTarget;
+                }
+                else
+                {
+                    distanceToTarget = Vector3.Distance(transform.position, new Vector3(targetPosition.x, targetPosition.y + projectileTargetOffsetY, targetPosition.z));
+                    speedMultiplier = projectileVelocity / distanceToTarget;
+                }
             }
         }
 

@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 1676674145078287577}
   - component: {fileID: 1676674145078287576}
   - component: {fileID: 4158493012613781499}
+  - component: {fileID: 3457465289504790058}
   m_Layer: 0
   m_Name: RedProjectileArrow_1
   m_TagString: Untagged
@@ -229,7 +230,7 @@ MonoBehaviour:
   radius: 3
   maxRadius: 3
   radiusExpandSpeed: 1
-  kickbackSpeedInSeconds: 1
+  kickbackSpeedInSeconds: 0.9
   kickbackTrajectoryHeight: 5
   kickbackDistance: 10
   damageToInflict: 100
@@ -248,6 +249,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &3457465289504790058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676674145078287579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51367fbabdf080340a77bc8c09b1ef56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_VFX: {fileID: 1373873258365392, guid: cd5def2bb4f6b4e4ab15ba0b6f35b29d, type: 3}
 --- !u!1 &3912904773334725067
 GameObject:
   m_ObjectHideFlags: 0

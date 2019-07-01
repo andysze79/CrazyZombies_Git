@@ -70,6 +70,11 @@ PrefabInstance:
       propertyPath: velocityBasedSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8622532448416780557, guid: 31c28c48480883e498de8322009e6e74,
+        type: 3}
+      propertyPath: projectileVelocity
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8622532448416780556, guid: 31c28c48480883e498de8322009e6e74,
         type: 3}
       propertyPath: m_Radius

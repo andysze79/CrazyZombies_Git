@@ -15,6 +15,7 @@ public class FormationTimeLine : MonoBehaviour
     public Animation m_CurrentAnimation;
     public bool m_OffsetAnimation;
     public bool m_OffsetRandomness;
+    public int m_UnitsEnablePerFrame = 1;
 
     [Header("AI Settings")]
     public bool m_EnableAI;
@@ -107,6 +108,7 @@ public class FormationTimeLine : MonoBehaviour
                 troopsList[Index].SetTrigger(CurrentAnimation.ToString());
                 troopsList.Remove(troopsList[Index]);
 
+                if(i % m_UnitsEnablePerFrame == 0)
                 yield return new WaitForEndOfFrame();
             }
         }
