@@ -19,8 +19,11 @@ namespace BaseAssets.Tools
 
         [Header("Kickback Settings")]
         public float kickbackSpeedInSeconds = 1f;
+        public float kickbackSpeedInSecondsMax = 1f;
         public float kickbackTrajectoryHeight = 1f;
+        public float kickbackTrajectoryHeightMax = 1f;
         public float kickbackDistance = 1f;
+        public float kickbackDistanceMax = 1f;
 
         [Header("Damage Settings")]
         public float damageToInflict = 0f;
@@ -41,7 +44,7 @@ namespace BaseAssets.Tools
                 if(!enemiesInSearchArea[i].transform.parent.GetComponent<AOEControlled>())
                 {
                     AOEControlled controlled = enemiesInSearchArea[i].transform.parent.gameObject.AddComponent<AOEControlled>();
-                    controlled.Setup(transform.position, kickbackSpeedInSeconds, kickbackTrajectoryHeight, kickbackDistance, damageToInflict, OnKickbackStart, OnKickbackUpdate, OnKickbackEnd);
+                    controlled.Setup(transform.position, Random.Range(kickbackSpeedInSeconds, kickbackSpeedInSecondsMax), Random.Range(kickbackTrajectoryHeight, kickbackTrajectoryHeightMax), Random.Range(kickbackDistance, kickbackDistanceMax), damageToInflict, OnKickbackStart, OnKickbackUpdate, OnKickbackEnd);
                 }
             }
 

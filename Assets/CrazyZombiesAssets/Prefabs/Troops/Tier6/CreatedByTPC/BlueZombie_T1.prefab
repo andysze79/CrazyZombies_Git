@@ -15,6 +15,19 @@ MonoBehaviour:
   m_AnimatorPath:
   - CrazyZombie/Animation/Zombie/Zombie
   - CrazyZombie/Animation/Zombie/Zombie 1
+--- !u!114 &4965476152052650740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430754596776827918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d36c1ebde66fa4f8f54a74ed2919ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxRotation: 30
 --- !u!1001 &467163967444933202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,16 +115,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1018316106991105227, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712080445540237164, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8321453113180751424, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
         type: 3}
       propertyPath: troopType
@@ -166,6 +169,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Speed
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018316106991105227, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712080445540237164, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018316106991198439, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
         type: 3}
@@ -3189,6 +3202,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7d9c0bfd8761b743ae65c7a0bc4444a, type: 3}
+--- !u!1 &8430754596776827918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8321453113180751452, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+    type: 3}
+  m_PrefabInstance: {fileID: 467163967444933202}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &601927905188621977 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1018316106991105227, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,

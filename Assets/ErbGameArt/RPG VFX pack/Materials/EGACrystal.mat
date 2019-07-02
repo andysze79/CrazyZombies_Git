@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: EGACrystal
-  m_Shader: {fileID: 4800000, guid: 13a43378542625f489f7c1c85ba6a4c4, type: 3}
+  m_Shader: {fileID: 4800000, guid: c2b9f09ef702b6c43a4e0ed82a4f7039, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0

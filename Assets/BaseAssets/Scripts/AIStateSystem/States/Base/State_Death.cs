@@ -12,6 +12,9 @@ namespace BaseAssets.AI
         protected override void RunOnce()
         {
             base.RunOnce();
+
+            // Add by Andy, for counting Dead Troops.
+            ObjectCounter.Instance.TargetKilled(transform.tag);
         }
 
         public override void EnterState()

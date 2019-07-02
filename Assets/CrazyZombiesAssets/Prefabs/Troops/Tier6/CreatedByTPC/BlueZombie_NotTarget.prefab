@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 8321453113180751452, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
         type: 3}
       propertyPath: m_TagString
-      value: RedZombie
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8321453113180751453, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
         type: 3}
@@ -102,16 +102,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1018316106991105227, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712080445540237164, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8321453113180751424, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
         type: 3}
       propertyPath: troopType
@@ -166,6 +156,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Speed
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018316106991105227, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712080445540237164, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1018316106991198439, guid: c7d9c0bfd8761b743ae65c7a0bc4444a,
         type: 3}

@@ -5,6 +5,10 @@ using BaseAssets.AI;
 
 public class AttackTrigger : MonoBehaviour
 {
+    public enum Elements { 
+        None, Fire
+    }
+
     [SerializeField] private string m_TargetLayer;
     [SerializeField] private GameObject m_ControlThisFormation;
     [SerializeField] private Transform m_FaceThisObj;
@@ -12,6 +16,10 @@ public class AttackTrigger : MonoBehaviour
     [SerializeField] private float m_DelayDestroyTime = 0;
     [SerializeField] private int m_VFXBufferSize;
     [SerializeField] private GameObject m_AttackVFX;
+
+    [Header("Magical attack effect")]
+    [SerializeField] private Elements m_CurrentAttackElements;
+    [SerializeField] private Color m_BurnedColor;
 
     public List<GameObject> m_AttackVFXs = new List<GameObject>();
     public List<Collider> m_WaitForDamage = new List<Collider>();
@@ -63,6 +71,10 @@ public class AttackTrigger : MonoBehaviour
             }
         }
 
+        if (m_CurrentAttackElements == Elements.Fire) {
+            StartCoroutine(BurnedEffect(other));
+        }
+
         yield return new WaitForSeconds(m_DelayDestroyTime);
 
         if (VFX != null) {
@@ -92,4 +104,18 @@ public class AttackTrigger : MonoBehaviour
         m_WaitForDamage.Clear();
     }
 
+    public IEnumerator BurnedEffect(Collider other) {
+        var startTime = Time.time;
+        var endTime = m_DelayDestroyTime;
+        var from = other.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].GetColor("_BaseColor");
+        var to = m_BurnedColor;
+
+        while (Time.time - startTime < endTime) {
+
+            other.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].SetColor("_BaseColor", Color.Lerp(from, to, (Time.time - startTime) / endTime));
+
+            yield return null;
+        }
+        
+    }
 }

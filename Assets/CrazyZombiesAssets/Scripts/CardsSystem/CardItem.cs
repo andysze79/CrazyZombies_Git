@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHandler {
 
@@ -151,11 +152,14 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
         switch (m_CurrentMode)
         {
             case Mode.Card:
+                // Open the Card image
                 m_PreviewObj.SetActive(false);
                 m_ControlObj.SetActive(false);
                 CardImage.color = OriginalCol;
 
-                //CardActive(true);
+                // Open all the child
+                SwitchAllChild(true);
+
 
                 m_PreviewObj.GetComponent<CameraRaycastObject>().DeactivateDragObject();
                 break;
@@ -168,9 +172,11 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
                 var col = OriginalCol;
                 col.a = 0;
                 CardImage.color = col;
-                //CardActive(false);
 
-                // Move out the card
+                // Close all the child
+                SwitchAllChild(false);
+                                
+                // Move out the card from hand
                 transform.SetParent(transform.root);
 
                 // Start dragging the object
@@ -180,6 +186,13 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
                 // Open the preview object
                 StartCoroutine(DelayerSwitch(m_PreviewObj, false, m_PreviewDelay));
                 StartCoroutine(DelayerSwitch(m_ControlObj, true, m_ControlDelay));
+
+                // Spend Resources
+                if (GetComponent<CardResourcesCounter>() != null)
+                {
+                    GetComponent<CardResourcesCounter>().UseCard();
+                }
+
                 break;
             default:
                 break;
@@ -247,5 +260,14 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     public IEnumerator DelayerSwitch(GameObject Target, bool value, float time) {
         yield return new WaitForSeconds(time);
         Target.SetActive(value);
+    }
+
+    public void SwitchAllChild(bool value) {
+        var objs = GetComponentsInChildren<TextMeshProUGUI>();
+
+        foreach (var item in objs)
+        {
+            item.enabled = value;
+        }
     }
 }

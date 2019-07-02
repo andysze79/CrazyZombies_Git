@@ -105,6 +105,7 @@ public class FormationTimeLine : MonoBehaviour
             for (int i = 0; i < troops.Length; i++)
             {
                 var Index = Random.Range(0, troopsList.Count);
+
                 troopsList[Index].SetTrigger(CurrentAnimation.ToString());
                 troopsList.Remove(troopsList[Index]);
 
