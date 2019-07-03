@@ -235,7 +235,7 @@ MonoBehaviour:
   kickbackTrajectoryHeight: 5
   kickbackTrajectoryHeightMax: 8
   kickbackDistance: 10
-  kickbackDistanceMax: 20
+  kickbackDistanceMax: 18
   damageToInflict: 100
   OnKickbackStart:
     m_PersistentCalls:

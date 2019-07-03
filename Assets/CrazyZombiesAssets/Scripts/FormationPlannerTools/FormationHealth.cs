@@ -9,6 +9,7 @@ public class FormationHealth : MonoBehaviour
     public float m_Health;
     public float m_HealthCurrent;
     public GameObject m_AttackTrigger;
+    public GameObject m_DisableThis;
 
     [Header("UI")]
     public Image m_HealthBar;
@@ -90,6 +91,11 @@ public class FormationHealth : MonoBehaviour
 
             if (m_HealthBar != null)
                 m_HealthBar.transform.parent.gameObject.SetActive(false);
+
+            if (m_DisableThis != null)
+            {
+                Destroy(m_DisableThis);
+            }
 
             m_AttackTrigger.SetActive(false);
         }
