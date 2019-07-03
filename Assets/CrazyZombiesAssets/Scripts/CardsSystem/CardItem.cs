@@ -28,7 +28,9 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     public Vector3 StartPos { get; set; }
     public float StartTime { get; set; }
     public bool DragInProgress { get; set; }
-    
+
+    public List<GameObject> ChildObjs = new List<GameObject>();
+
     // Ienumerater Buffer
     Coroutine ColProcess { get; set; }
 
@@ -60,6 +62,8 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
 
         InitializePos();
         DragInProgress = true;
+
+        //SwitchAllChild(false);
     }
 
     public void DragUpdate(PointerEventData eventData)
@@ -263,11 +267,23 @@ public class CardItem : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     }
 
     public void SwitchAllChild(bool value) {
-        var objs = GetComponentsInChildren<TextMeshProUGUI>();
-
-        foreach (var item in objs)
+        //var objs = GetComponentsInChildren<TextMeshProUGUI>();
+        if (ChildObjs.Count == 0)
         {
-            item.enabled = value;
+            var objs = GetComponentsInChildren<RectTransform>();
+
+            foreach (var obj in objs)
+            {
+                if (obj != GetComponent<RectTransform>())
+                    ChildObjs.Add(obj.gameObject);
+            }
+        }
+
+
+        foreach (var item in ChildObjs)
+        {            
+            //item.enabled = value;
+            item.gameObject.SetActive(value);
         }
     }
 }
