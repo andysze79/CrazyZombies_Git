@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: f41e0448dbe52d74fbbbec3a1989e879
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: WarFlag_Rig:pCylinder11
+    100004: WarFlag_Rig:pCylinder12
+    100006: WarFlag_Rig:pCylinder13
+    100008: WarFlag_Rig:pCylinder15
+    100010: WarFlag_Rig:pCylinder16
+    100012: WarFlag_Rig:polySurface5
+    100014: WarFlag_Rig:pPlane3
+    100016: WarFlag_Rig:WarFlag_JNT1
+    100018: WarFlag_Rig:WarFlag_JNT2
+    100020: WarFlag_Rig:WarFlag_JNT3
+    100022: WarFlag_Rig:WarFlag_JNT4
+    100024: WarFlag_Rig:WarFlag_JNT5
+    100026: WarFlag_Rig:WarFlag_JNT6
+    100028: WarFlag_Rig:WarFlag_JNT7
+    100030: WarFlag_Rig:WarFlag_JNT8
+    100032: WarFlag_Rig:WarFlag_Mesh
+    400000: //RootNode
+    400002: WarFlag_Rig:pCylinder11
+    400004: WarFlag_Rig:pCylinder12
+    400006: WarFlag_Rig:pCylinder13
+    400008: WarFlag_Rig:pCylinder15
+    400010: WarFlag_Rig:pCylinder16
+    400012: WarFlag_Rig:polySurface5
+    400014: WarFlag_Rig:pPlane3
+    400016: WarFlag_Rig:WarFlag_JNT1
+    400018: WarFlag_Rig:WarFlag_JNT2
+    400020: WarFlag_Rig:WarFlag_JNT3
+    400022: WarFlag_Rig:WarFlag_JNT4
+    400024: WarFlag_Rig:WarFlag_JNT5
+    400026: WarFlag_Rig:WarFlag_JNT6
+    400028: WarFlag_Rig:WarFlag_JNT7
+    400030: WarFlag_Rig:WarFlag_JNT8
+    400032: WarFlag_Rig:WarFlag_Mesh
+    2100000: WarFlag_Rig_unwrapChekcerShader
+    2300000: WarFlag_Rig:pCylinder11
+    2300002: WarFlag_Rig:pCylinder12
+    2300004: WarFlag_Rig:pCylinder13
+    2300006: WarFlag_Rig:pCylinder15
+    2300008: WarFlag_Rig:pCylinder16
+    2300010: WarFlag_Rig:polySurface5
+    3300000: WarFlag_Rig:pCylinder11
+    3300002: WarFlag_Rig:pCylinder12
+    3300004: WarFlag_Rig:pCylinder13
+    3300006: WarFlag_Rig:pCylinder15
+    3300008: WarFlag_Rig:pCylinder16
+    3300010: WarFlag_Rig:polySurface5
+    4300000: WarFlag_Rig:pPlane3
+    4300002: WarFlag_Rig:pCylinder11
+    4300004: WarFlag_Rig:pCylinder12
+    4300006: WarFlag_Rig:pCylinder13
+    4300008: WarFlag_Rig:pCylinder15
+    4300010: WarFlag_Rig:pCylinder16
+    4300012: WarFlag_Rig:polySurface5
+    9500000: //RootNode
+    13700000: WarFlag_Rig:pPlane3
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
