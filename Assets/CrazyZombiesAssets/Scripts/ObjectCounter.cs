@@ -3,15 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum GameResource {
+    Heart, Diamond, Gold
+}
+
 public class ObjectCounter : MonoBehaviour
 {
+    [System.Serializable]
+    public struct ResourceGroup {
+        public GameResource Type;
+        public TextUpdater Text;
+        public float GainResourcesEachKill;
+        public float Amount;
+    }
+
     public string m_ObjTag = "RedZombie";
     public float m_RefreshTime = 2f;
     public TextUpdater m_SpawnedAmountText;
     public TextUpdater m_KilledAmountText;
-    public TextUpdater m_ResourcesText;
-    public float m_GainResourcesEachKill;
-    public float m_ResourcesAmount;
+
+    public List<ResourceGroup> m_ResourcesGroups = new List<ResourceGroup>();
+
 
     public static ObjectCounter m_Instance;
     public static ObjectCounter Instance {
@@ -35,7 +47,14 @@ public class ObjectCounter : MonoBehaviour
 
     public void InitializeUI() {
         if (m_KilledAmountText != null) m_KilledAmountText.ChangeText(CurrentKilled);
-        if (m_ResourcesText != null) UpdateResources(m_GainResourcesEachKill);
+
+        if (m_ResourcesGroups.Count != 0)
+        {
+            for (int i = 0; i < m_ResourcesGroups.Count; i++)
+            {
+                UpdateResources(m_ResourcesGroups[i].Type, m_ResourcesGroups[i].GainResourcesEachKill);
+            }
+        }
     }
 
     public IEnumerator UpdateAmount(){
@@ -58,15 +77,19 @@ public class ObjectCounter : MonoBehaviour
     public void TargetKilled(string tag)
     {
         if (tag == m_ObjTag) {
-            UpdateKilledAmount();            
-            UpdateResources(m_GainResourcesEachKill);            
+            UpdateKilledAmount();
+
+            if(m_ResourcesGroups.Count != 0)
+            for (int i = 0; i < m_ResourcesGroups.Count; i++)
+            {
+                UpdateResources(m_ResourcesGroups[i].Type, m_ResourcesGroups[i].GainResourcesEachKill);
+            }
         }
     }
 
-    public void UseResources(float value) {
-        if (m_ResourcesAmount - value > 0) {
-            UpdateResources(-value);
-        }
+    public void UseResources(GameResource Type, float value) {
+        //Debug.Log("Use " + value + " " + Type);
+        UpdateResources(Type, -value);        
     }
 
     public void CheckEnable(TextUpdater target) {
@@ -86,14 +109,27 @@ public class ObjectCounter : MonoBehaviour
         }     
     }
 
-    public void UpdateResources(float addValue)
+    public void UpdateResources(GameResource ResourceType ,float addValue)
     {
-        if (m_ResourcesText != null)
+        for (int i = 0; i < m_ResourcesGroups.Count; i++)
         {
-            CheckEnable(m_ResourcesText);
-            m_ResourcesAmount += addValue;
-            m_ResourcesText.ChangeText(m_ResourcesAmount);
-        }
+            if (m_ResourcesGroups[i].Type == ResourceType)
+            {
+                // Calculate   
+                var resource = m_ResourcesGroups[i];
+                resource.Amount += addValue;
+
+                //Debug.Log("Current " + resource.Type + " " + resource.Amount);
+
+                if (resource.Amount >= 0)
+                m_ResourcesGroups[i] = resource;
+
+                // Update UI
+                CheckEnable(m_ResourcesGroups[i].Text);
+                m_ResourcesGroups[i].Text.ChangeText(m_ResourcesGroups[i].Amount);
+
+            }
+        }        
     }
 
 
