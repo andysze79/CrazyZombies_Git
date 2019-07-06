@@ -2763,7 +2763,7 @@ MonoBehaviour:
   m_Name: ImageRecorderSettings(Clone)
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 20
+  take: 39
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
@@ -2771,7 +2771,7 @@ MonoBehaviour:
       m_Leaf: C:/Users/andys/Videos/CrazyZombie/CrazyZombie_V1.1
       m_ForceAssetFolder: 0
     m_FileName: image_<Frame>
-  outputFormat: 1
+  outputFormat: 0
   captureAlpha: 0
   m_ImageInputSelector:
     m_Selected: gameViewInputSettings
@@ -2790,18 +2790,18 @@ MonoBehaviour:
     cameraInputSettings:
       allowTransparency: 0
       m_OutputResolution:
-        m_CustomWidth: 1024
-        m_CustomHeight: 1024
-        imageHeight: 0
+        m_CustomWidth: 1920
+        m_CustomHeight: 1080
+        imageHeight: 2147483647
         maxSupportedHeight: 4320
         m_AspectRatio:
           m_CustomAspectX: 1
           m_CustomAspectY: 1
           m_ImageAspect: 1
-      source: 1
-      cameraTag: 
+      source: 4
+      cameraTag: RenderUI
       flipFinalOutput: 0
-      captureUI: 0
+      captureUI: 1
     camera360InputSettings:
       allowTransparency: 0
       source: 2
