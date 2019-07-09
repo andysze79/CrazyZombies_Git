@@ -2727,7 +2727,7 @@ MonoBehaviour:
   m_Name: ImageRecorderSettings(Clone)
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 30
+  take: 31
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
