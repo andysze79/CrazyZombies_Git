@@ -2453,7 +2453,7 @@ MonoBehaviour:
   m_Name: Animation Track (6)
   m_EditorClassIdentifier: 
   m_Locked: 0
-  m_Muted: 0
+  m_Muted: 1
   m_CustomPlayableFullTypename: 
   m_AnimClip: {fileID: 74533072601239594}
   m_Parent: {fileID: 114905011482585376}
@@ -2763,7 +2763,7 @@ MonoBehaviour:
   m_Name: ImageRecorderSettings(Clone)
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 39
+  take: 36
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
@@ -2942,7 +2942,7 @@ MonoBehaviour:
   m_Name: Recorder Track (1)
   m_EditorClassIdentifier: 
   m_Locked: 0
-  m_Muted: 1
+  m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_AnimClip: {fileID: 0}
   m_Parent: {fileID: 11400000}

@@ -60,7 +60,7 @@ public class ObjectCounter : MonoBehaviour
     public IEnumerator UpdateAmount(){
         var counter = GameObject.FindGameObjectsWithTag(m_ObjTag).Length;
 
-        Debug.Log(counter + " Zombies awake!"); 
+        //Debug.Log(counter + " Zombies awake!"); 
 
         yield return new WaitForSeconds(m_RefreshTime);
 

@@ -2727,7 +2727,7 @@ MonoBehaviour:
   m_Name: ImageRecorderSettings(Clone)
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 31
+  take: 37
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
@@ -2743,7 +2743,7 @@ MonoBehaviour:
       allowTransparency: 0
       m_OutputResolution:
         m_CustomWidth: 1080
-        m_CustomHeight: 1920
+        m_CustomHeight: 1080
         imageHeight: 2147483647
         maxSupportedHeight: 4320
         m_AspectRatio:
@@ -2906,7 +2906,7 @@ MonoBehaviour:
   m_Name: Recorder Track (1)
   m_EditorClassIdentifier: 
   m_Locked: 0
-  m_Muted: 1
+  m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_AnimClip: {fileID: 0}
   m_Parent: {fileID: 11400000}

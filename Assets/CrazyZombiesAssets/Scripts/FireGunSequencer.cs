@@ -31,6 +31,7 @@ public class FireGunSequencer : MonoBehaviour
         public int Max;
         public float DealayStart;
         public float Percisement;
+        public List<GameObject> VFXprewarmed;
     }
 
     public List<Event> m_Events = new List<Event>();
@@ -38,6 +39,7 @@ public class FireGunSequencer : MonoBehaviour
     public List<VFXEvent> m_VFXEvents = new List<VFXEvent>();
     
     List<GameObject> Clones = new List<GameObject>();
+    //List<GameObject> VFXprewarmed = new List<GameObject>();
 
     public void OnEnable() {
         Initialize();
@@ -55,6 +57,15 @@ public class FireGunSequencer : MonoBehaviour
         foreach (var item in m_UIEvents)
         {
             item.ProgressBar.enabled = false;
+        }
+        foreach (var item in m_VFXEvents)
+        {
+            for (int i = 0; i < item.Max; i++)
+            {
+                var clone = Instantiate(item.Effect, item.Position);                
+                item.VFXprewarmed.Add(clone);
+                clone.SetActive(false);
+            }
         }
     }
 
@@ -124,13 +135,23 @@ public class FireGunSequencer : MonoBehaviour
         var from = vfxEvent.Min;
         var to = vfxEvent.Max;
         var step = endTime / (to - from);
+        var currentIndex = 0;
+
+        Clones = vfxEvent.VFXprewarmed;
 
         while (Time.time - startTime < endTime)
         {
             if ((Time.time - startTime) > vfxEvent.DealayStart && (Time.time - startTime - vfxEvent.DealayStart) % step < vfxEvent.Percisement) {
 
+                vfxEvent.VFXprewarmed[currentIndex].SetActive(true);
+
+                ++currentIndex;
+                Debug.Log("Instanciate lighting");
+
                 if (Clones.Count < to)
-                    Clones.Add(Instantiate(vfxEvent.Effect, vfxEvent.Position));
+                {
+                    //Clones.Add(Instantiate(vfxEvent.Effect, vfxEvent.Position));     
+                }
             }
             yield return null;
         }
