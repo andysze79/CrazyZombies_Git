@@ -2732,7 +2732,7 @@ MonoBehaviour:
   fileNameGenerator:
     m_Path:
       m_Root: 5
-      m_Leaf: C:/Users/andys/Videos/CrazyZombie/CrazyZombie_V1.1
+      m_Leaf: C:/Users/andys/Videos/CrazyZombie_MR/Portrait
       m_ForceAssetFolder: 0
     m_FileName: image_<Frame>
   outputFormat: 0

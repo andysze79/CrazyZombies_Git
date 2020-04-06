@@ -2763,12 +2763,12 @@ MonoBehaviour:
   m_Name: ImageRecorderSettings(Clone)
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 36
+  take: 35
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
       m_Root: 5
-      m_Leaf: C:/Users/andys/Videos/CrazyZombie/CrazyZombie_V1.1
+      m_Leaf: C:/Users/andys/Videos/CrazyZombie_MR/LandScape/KillsCounter
       m_ForceAssetFolder: 0
     m_FileName: image_<Frame>
   outputFormat: 0
@@ -2942,7 +2942,7 @@ MonoBehaviour:
   m_Name: Recorder Track (1)
   m_EditorClassIdentifier: 
   m_Locked: 0
-  m_Muted: 0
+  m_Muted: 1
   m_CustomPlayableFullTypename: 
   m_AnimClip: {fileID: 0}
   m_Parent: {fileID: 11400000}
